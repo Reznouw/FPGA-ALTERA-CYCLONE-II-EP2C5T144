@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\UPC\DISEÑO DIGITAL\Lab2\simulation\qsim
+vLab2
+Z1 !s100 4_N9JW<L[@@g]@5Z=V^==1
+Z2 I[6I>dg7ZRF3F4F^oP7bT:3
+Z3 V[]bbK;dQ]j[@7?SdR@bOm3
+Z4 dC:\UPC\DISEÑO DIGITAL\Lab2\simulation\qsim
+Z5 w1727064025
+Z6 8Lab2.vo
+Z7 FLab2.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|Lab2.vo|
+Z10 o-work work -O0
+Z11 n@lab2
+!i10b 1
+!s85 0
+Z12 !s108 1727064025.890000
+Z13 !s107 Lab2.vo|
+!s101 -O0
+vLab2_vlg_check_tst
+!i10b 1
+Z14 !s100 <]EF?5cSTSC1GF^RA7^<A3
+Z15 IA@ci5<<I@6I145k];UQW^1
+Z16 VQFgVI6`B1I]JSAW_[ZlaQ1
+R4
+Z17 w1727064024
+Z18 8Lab2.vt
+Z19 FLab2.vt
+L0 63
+R8
+r1
+!s85 0
+31
+Z20 !s108 1727064025.936000
+Z21 !s107 Lab2.vt|
+Z22 !s90 -work|work|Lab2.vt|
+!s101 -O0
+R10
+Z23 n@lab2_vlg_check_tst
+vLab2_vlg_sample_tst
+!i10b 1
+Z24 !s100 HJ_G2hc]38U]2E>EVKFGR1
+Z25 IL^zHMnK8cHKoWn9m=7nLm1
+Z26 VHE>P`<1;67nPi1=oPOA8U1
+R4
+R17
+R18
+R19
+L0 29
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z27 n@lab2_vlg_sample_tst
+vLab2_vlg_vec_tst
+!i10b 1
+!s100 EANC9mC_chVFna_o5Vc261
+I:m?WN2N62@b58_T3L06<O1
+Z28 V`3LYGI?k?CjHTAMDzbDi51
+R4
+R17
+R18
+R19
+Z29 L0 158
+R8
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z30 n@lab2_vlg_vec_tst

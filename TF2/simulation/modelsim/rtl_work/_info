@@ -1,0 +1,60 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\UPC\DDIGITAL\TF2\simulation\modelsim
+Etf2
+w1732619351
+Z1 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z4 dC:\UPC\DDIGITAL\TF2\simulation\modelsim
+8C:/UPC/DDIGITAL/TF2/TF2.vhd
+FC:/UPC/DDIGITAL/TF2/TF2.vhd
+l0
+L5
+VV6jW@4T<?DYUW3nKY?I2b2
+Z5 OV;C;10.1d;51
+31
+o-93 -work work -O0
+Z6 tExplicit 1
+!s100 hWZln9aMh[;B8B1n7HaWH3
+!i10b 1
+!s108 1732623976.438000
+!s90 -reportprogress|300|-93|-work|work|C:/UPC/DDIGITAL/TF2/TF2.vhd|
+!s107 C:/UPC/DDIGITAL/TF2/TF2.vhd|
+Etf2_vhd_tst
+Z7 w1732623857
+R2
+R3
+R4
+Z8 8C:/UPC/DDIGITAL/TF2/simulation/modelsim/TF2.vht
+Z9 FC:/UPC/DDIGITAL/TF2/simulation/modelsim/TF2.vht
+l0
+L30
+VHTR?j`iRCDS<;?9?Io_FI1
+!s100 9cCU0gKcdcbPkiJ<c;H0_2
+R5
+32
+!i10b 1
+Z10 !s108 1732623983.638000
+Z11 !s90 -reportprogress|300|-work|work|C:/UPC/DDIGITAL/TF2/simulation/modelsim/TF2.vht|
+Z12 !s107 C:/UPC/DDIGITAL/TF2/simulation/modelsim/TF2.vht|
+Z13 o-work work -O0
+R6
+Atf2_arch
+R2
+R3
+DEx4 work 11 tf2_vhd_tst 0 22 HTR?j`iRCDS<;?9?Io_FI1
+l51
+L32
+Vmjo2DSJPPhdmE8EkdRjgE3
+!s100 MYFKGCZH@Mfhko[KY[8Fg0
+R5
+32
+!i10b 1
+R10
+R11
+R12
+R13
+R6

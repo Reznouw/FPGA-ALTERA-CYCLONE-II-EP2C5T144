@@ -1,0 +1,119 @@
+set_global_assignment -entity "lab3" -library "lab3" -name IP_TOOL_NAME "Qsys"
+set_global_assignment -entity "lab3" -library "lab3" -name IP_TOOL_VERSION "13.0sp1"
+set_global_assignment -entity "lab3" -library "lab3" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -library "lab3" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../lab3.sopcinfo"]
+set_instance_assignment -entity "lab3" -library "lab3" -name SLD_INFO "QSYS_NAME lab3 HAS_SOPCINFO 1 GENERATION_ID 1730293103"
+set_global_assignment -library "lab3" -name MISC_FILE [file join $::quartus(qip_path) "../../lab3.cmp"]
+set_global_assignment -name SYNTHESIS_ONLY_QIP ON
+set_global_assignment -library "lab3" -name MISC_FILE [file join $::quartus(qip_path) "../../lab3.qsys"]
+
+set_global_assignment -library "lab3" -name VHDL_FILE [file join $::quartus(qip_path) "lab3.vhd"]
+set_global_assignment -library "lab3" -name VHDL_FILE [file join $::quartus(qip_path) "lab3_cpu_jtag_debug_module_translator.vhd"]
+set_global_assignment -library "lab3" -name VHDL_FILE [file join $::quartus(qip_path) "lab3_onchip_memory2_0_s1_translator.vhd"]
+set_global_assignment -library "lab3" -name VHDL_FILE [file join $::quartus(qip_path) "lab3_jtag_uart_0_avalon_jtag_slave_translator.vhd"]
+set_global_assignment -library "lab3" -name VHDL_FILE [file join $::quartus(qip_path) "lab3_pio_0_s1_translator.vhd"]
+set_global_assignment -library "lab3" -name VHDL_FILE [file join $::quartus(qip_path) "lab3_cpu_instruction_master_translator.vhd"]
+set_global_assignment -library "lab3" -name VHDL_FILE [file join $::quartus(qip_path) "lab3_cpu_data_master_translator.vhd"]
+set_global_assignment -library "lab3" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/lab3_irq_mapper.sv"]
+set_global_assignment -library "lab3" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_arbitrator.sv"]
+set_global_assignment -library "lab3" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/lab3_rsp_xbar_mux_001.sv"]
+set_global_assignment -library "lab3" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/lab3_rsp_xbar_mux.sv"]
+set_global_assignment -library "lab3" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/lab3_rsp_xbar_demux_002.sv"]
+set_global_assignment -library "lab3" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/lab3_cmd_xbar_mux.sv"]
+set_global_assignment -library "lab3" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/lab3_cmd_xbar_demux_001.sv"]
+set_global_assignment -library "lab3" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/lab3_cmd_xbar_demux.sv"]
+set_global_assignment -library "lab3" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_reset_controller.v"]
+set_global_assignment -library "lab3" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_reset_synchronizer.v"]
+set_global_assignment -library "lab3" -name SDC_FILE [file join $::quartus(qip_path) "submodules/altera_reset_controller.sdc"]
+set_global_assignment -library "lab3" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/lab3_id_router_002.sv"]
+set_global_assignment -library "lab3" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/lab3_id_router.sv"]
+set_global_assignment -library "lab3" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/lab3_addr_router_001.sv"]
+set_global_assignment -library "lab3" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/lab3_addr_router.sv"]
+set_global_assignment -library "lab3" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_avalon_sc_fifo.v"]
+set_global_assignment -library "lab3" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_slave_agent.sv"]
+set_global_assignment -library "lab3" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_burst_uncompressor.sv"]
+set_global_assignment -library "lab3" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_master_agent.sv"]
+set_global_assignment -library "lab3" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_slave_translator.sv"]
+set_global_assignment -library "lab3" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_master_translator.sv"]
+set_global_assignment -library "lab3" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/lab3_pio_1.v"]
+set_global_assignment -library "lab3" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/lab3_pio_0.v"]
+set_global_assignment -library "lab3" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/lab3_onchip_memory2_0.hex"]
+set_global_assignment -library "lab3" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/lab3_onchip_memory2_0.v"]
+set_global_assignment -library "lab3" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/lab3_jtag_uart_0.v"]
+set_global_assignment -library "lab3" -name SDC_FILE [file join $::quartus(qip_path) "submodules/lab3_cpu.sdc"]
+set_global_assignment -library "lab3" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/lab3_cpu.v"]
+set_global_assignment -library "lab3" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/lab3_cpu_jtag_debug_module_sysclk.v"]
+set_global_assignment -library "lab3" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/lab3_cpu_jtag_debug_module_tck.v"]
+set_global_assignment -library "lab3" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/lab3_cpu_jtag_debug_module_wrapper.v"]
+set_global_assignment -library "lab3" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/lab3_cpu_ociram_default_contents.mif"]
+set_global_assignment -library "lab3" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/lab3_cpu_oci_test_bench.v"]
+set_global_assignment -library "lab3" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/lab3_cpu_rf_ram_a.mif"]
+set_global_assignment -library "lab3" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/lab3_cpu_rf_ram_b.mif"]
+set_global_assignment -library "lab3" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/lab3_cpu_test_bench.v"]
+
+set_global_assignment -entity "lab3_irq_mapper" -library "lab3" -name IP_TOOL_NAME "altera_irq_mapper"
+set_global_assignment -entity "lab3_irq_mapper" -library "lab3" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "lab3_irq_mapper" -library "lab3" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "lab3_rsp_xbar_mux_001" -library "lab3" -name IP_TOOL_NAME "altera_merlin_multiplexer"
+set_global_assignment -entity "lab3_rsp_xbar_mux_001" -library "lab3" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "lab3_rsp_xbar_mux_001" -library "lab3" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "lab3_rsp_xbar_mux" -library "lab3" -name IP_TOOL_NAME "altera_merlin_multiplexer"
+set_global_assignment -entity "lab3_rsp_xbar_mux" -library "lab3" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "lab3_rsp_xbar_mux" -library "lab3" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "lab3_rsp_xbar_demux_002" -library "lab3" -name IP_TOOL_NAME "altera_merlin_demultiplexer"
+set_global_assignment -entity "lab3_rsp_xbar_demux_002" -library "lab3" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "lab3_rsp_xbar_demux_002" -library "lab3" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "lab3_cmd_xbar_mux" -library "lab3" -name IP_TOOL_NAME "altera_merlin_multiplexer"
+set_global_assignment -entity "lab3_cmd_xbar_mux" -library "lab3" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "lab3_cmd_xbar_mux" -library "lab3" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "lab3_cmd_xbar_demux_001" -library "lab3" -name IP_TOOL_NAME "altera_merlin_demultiplexer"
+set_global_assignment -entity "lab3_cmd_xbar_demux_001" -library "lab3" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "lab3_cmd_xbar_demux_001" -library "lab3" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "lab3_cmd_xbar_demux" -library "lab3" -name IP_TOOL_NAME "altera_merlin_demultiplexer"
+set_global_assignment -entity "lab3_cmd_xbar_demux" -library "lab3" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "lab3_cmd_xbar_demux" -library "lab3" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "altera_reset_controller" -library "lab3" -name IP_TOOL_NAME "altera_reset_controller"
+set_global_assignment -entity "altera_reset_controller" -library "lab3" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "altera_reset_controller" -library "lab3" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "lab3_id_router_002" -library "lab3" -name IP_TOOL_NAME "altera_merlin_router"
+set_global_assignment -entity "lab3_id_router_002" -library "lab3" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "lab3_id_router_002" -library "lab3" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "lab3_id_router" -library "lab3" -name IP_TOOL_NAME "altera_merlin_router"
+set_global_assignment -entity "lab3_id_router" -library "lab3" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "lab3_id_router" -library "lab3" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "lab3_addr_router_001" -library "lab3" -name IP_TOOL_NAME "altera_merlin_router"
+set_global_assignment -entity "lab3_addr_router_001" -library "lab3" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "lab3_addr_router_001" -library "lab3" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "lab3_addr_router" -library "lab3" -name IP_TOOL_NAME "altera_merlin_router"
+set_global_assignment -entity "lab3_addr_router" -library "lab3" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "lab3_addr_router" -library "lab3" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "altera_avalon_sc_fifo" -library "lab3" -name IP_TOOL_NAME "altera_avalon_sc_fifo"
+set_global_assignment -entity "altera_avalon_sc_fifo" -library "lab3" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "altera_avalon_sc_fifo" -library "lab3" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "altera_merlin_slave_agent" -library "lab3" -name IP_TOOL_NAME "altera_merlin_slave_agent"
+set_global_assignment -entity "altera_merlin_slave_agent" -library "lab3" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "altera_merlin_slave_agent" -library "lab3" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "altera_merlin_master_agent" -library "lab3" -name IP_TOOL_NAME "altera_merlin_master_agent"
+set_global_assignment -entity "altera_merlin_master_agent" -library "lab3" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "altera_merlin_master_agent" -library "lab3" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "altera_merlin_slave_translator" -library "lab3" -name IP_TOOL_NAME "altera_merlin_slave_translator"
+set_global_assignment -entity "altera_merlin_slave_translator" -library "lab3" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "altera_merlin_slave_translator" -library "lab3" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "altera_merlin_master_translator" -library "lab3" -name IP_TOOL_NAME "altera_merlin_master_translator"
+set_global_assignment -entity "altera_merlin_master_translator" -library "lab3" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "altera_merlin_master_translator" -library "lab3" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "lab3_pio_1" -library "lab3" -name IP_TOOL_NAME "altera_avalon_pio"
+set_global_assignment -entity "lab3_pio_1" -library "lab3" -name IP_TOOL_VERSION "13.0.1.99.2"
+set_global_assignment -entity "lab3_pio_1" -library "lab3" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "lab3_pio_0" -library "lab3" -name IP_TOOL_NAME "altera_avalon_pio"
+set_global_assignment -entity "lab3_pio_0" -library "lab3" -name IP_TOOL_VERSION "13.0.1.99.2"
+set_global_assignment -entity "lab3_pio_0" -library "lab3" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "lab3_onchip_memory2_0" -library "lab3" -name IP_TOOL_NAME "altera_avalon_onchip_memory2"
+set_global_assignment -entity "lab3_onchip_memory2_0" -library "lab3" -name IP_TOOL_VERSION "13.0.1.99.2"
+set_global_assignment -entity "lab3_onchip_memory2_0" -library "lab3" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "lab3_jtag_uart_0" -library "lab3" -name IP_TOOL_NAME "altera_avalon_jtag_uart"
+set_global_assignment -entity "lab3_jtag_uart_0" -library "lab3" -name IP_TOOL_VERSION "13.0.1.99.2"
+set_global_assignment -entity "lab3_jtag_uart_0" -library "lab3" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -entity "lab3_cpu" -library "lab3" -name IP_TOOL_NAME "altera_nios2_qsys"
+set_global_assignment -entity "lab3_cpu" -library "lab3" -name IP_TOOL_VERSION "13.0"
+set_global_assignment -entity "lab3_cpu" -library "lab3" -name IP_TOOL_ENV "Qsys"

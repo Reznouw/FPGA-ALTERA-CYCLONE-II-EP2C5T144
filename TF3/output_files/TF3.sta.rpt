@@ -1,0 +1,1335 @@
+TimeQuest Timing Analyzer report for TF3
+Wed Nov 27 11:48:49 2024
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'clk'
+ 12. Slow Model Hold: 'clk'
+ 13. Slow Model Minimum Pulse Width: 'clk'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Propagation Delay
+ 19. Minimum Propagation Delay
+ 20. Fast Model Setup Summary
+ 21. Fast Model Hold Summary
+ 22. Fast Model Recovery Summary
+ 23. Fast Model Removal Summary
+ 24. Fast Model Minimum Pulse Width Summary
+ 25. Fast Model Setup: 'clk'
+ 26. Fast Model Hold: 'clk'
+ 27. Fast Model Minimum Pulse Width: 'clk'
+ 28. Setup Times
+ 29. Hold Times
+ 30. Clock to Output Times
+ 31. Minimum Clock to Output Times
+ 32. Propagation Delay
+ 33. Minimum Propagation Delay
+ 34. Multicorner Timing Analysis Summary
+ 35. Setup Times
+ 36. Hold Times
+ 37. Clock to Output Times
+ 38. Minimum Clock to Output Times
+ 39. Progagation Delay
+ 40. Minimum Progagation Delay
+ 41. Setup Transfers
+ 42. Hold Transfers
+ 43. Report TCCS
+ 44. Report RSKM
+ 45. Unconstrained Paths
+ 46. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; TF3                                                               ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C5T144C8                                                       ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 12     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++--------------------------------------------------+
+; Slow Model Fmax Summary                          ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 168.52 MHz ; 168.52 MHz      ; clk        ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Slow Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -4.934 ; -442.021      ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.499 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -2.277 ; -1037.953             ;
++-------+--------+-----------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clk'                                                                                                                                                                                                                                                                 ;
++--------+----------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                                                                      ; To Node                                                                                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -4.934 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[7]                           ; pwm:u7|buf_reg                                                                          ; clk          ; clk         ; 1.000        ; -0.085     ; 5.889      ;
+; -4.839 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[9]                           ; pwm:u7|buf_reg                                                                          ; clk          ; clk         ; 1.000        ; -0.096     ; 5.783      ;
+; -4.824 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[8]                           ; pwm:u7|buf_reg                                                                          ; clk          ; clk         ; 1.000        ; -0.071     ; 5.793      ;
+; -4.783 ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[7]                        ; pwm:u7|buf_reg                                                                          ; clk          ; clk         ; 1.000        ; -0.089     ; 5.734      ;
+; -4.750 ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[6]                        ; pwm:u7|buf_reg                                                                          ; clk          ; clk         ; 1.000        ; -0.077     ; 5.713      ;
+; -4.715 ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[8]                        ; pwm:u7|buf_reg                                                                          ; clk          ; clk         ; 1.000        ; -0.071     ; 5.684      ;
+; -4.645 ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[9]                        ; pwm:u7|buf_reg                                                                          ; clk          ; clk         ; 1.000        ; -0.093     ; 5.592      ;
+; -4.610 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[6]                             ; pwm:u7|buf_reg                                                                          ; clk          ; clk         ; 1.000        ; -0.089     ; 5.561      ;
+; -4.582 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[6]                           ; pwm:u7|buf_reg                                                                          ; clk          ; clk         ; 1.000        ; -0.077     ; 5.545      ;
+; -4.416 ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[0]                        ; pwm:u7|buf_reg                                                                          ; clk          ; clk         ; 1.000        ; -0.083     ; 5.373      ;
+; -4.343 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[7]                             ; pwm:u7|buf_reg                                                                          ; clk          ; clk         ; 1.000        ; -0.085     ; 5.298      ;
+; -4.292 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[8]                             ; pwm:u7|buf_reg                                                                          ; clk          ; clk         ; 1.000        ; -0.093     ; 5.239      ;
+; -4.271 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[9]                             ; pwm:u7|buf_reg                                                                          ; clk          ; clk         ; 1.000        ; -0.096     ; 5.215      ;
+; -4.256 ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[3]                        ; pwm:u7|buf_reg                                                                          ; clk          ; clk         ; 1.000        ; -0.100     ; 5.196      ;
+; -4.225 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[2]                           ; pwm:u7|buf_reg                                                                          ; clk          ; clk         ; 1.000        ; -0.081     ; 5.184      ;
+; -4.096 ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[2]                        ; pwm:u7|buf_reg                                                                          ; clk          ; clk         ; 1.000        ; -0.081     ; 5.055      ;
+; -4.062 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[10]                          ; pwm:u7|buf_reg                                                                          ; clk          ; clk         ; 1.000        ; -0.091     ; 5.011      ;
+; -4.057 ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[1]                        ; pwm:u7|buf_reg                                                                          ; clk          ; clk         ; 1.000        ; -0.097     ; 5.000      ;
+; -4.025 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[4]                           ; pwm:u7|buf_reg                                                                          ; clk          ; clk         ; 1.000        ; -0.093     ; 4.972      ;
+; -4.000 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[0]                           ; pwm:u7|buf_reg                                                                          ; clk          ; clk         ; 1.000        ; -0.083     ; 4.957      ;
+; -3.954 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[1]                           ; pwm:u7|buf_reg                                                                          ; clk          ; clk         ; 1.000        ; -0.097     ; 4.897      ;
+; -3.910 ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[10]                       ; pwm:u7|buf_reg                                                                          ; clk          ; clk         ; 1.000        ; -0.091     ; 4.859      ;
+; -3.840 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[3]                           ; pwm:u7|buf_reg                                                                          ; clk          ; clk         ; 1.000        ; -0.103     ; 4.777      ;
+; -3.733 ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[5]                        ; pwm:u7|buf_reg                                                                          ; clk          ; clk         ; 1.000        ; -0.108     ; 4.665      ;
+; -3.664 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[0]                             ; pwm:u7|buf_reg                                                                          ; clk          ; clk         ; 1.000        ; -0.097     ; 4.607      ;
+; -3.556 ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[4]                        ; pwm:u7|buf_reg                                                                          ; clk          ; clk         ; 1.000        ; -0.093     ; 4.503      ;
+; -3.550 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[2]                             ; pwm:u7|buf_reg                                                                          ; clk          ; clk         ; 1.000        ; -0.100     ; 4.490      ;
+; -3.537 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[5]                           ; pwm:u7|buf_reg                                                                          ; clk          ; clk         ; 1.000        ; -0.104     ; 4.473      ;
+; -3.518 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[1]                             ; pwm:u7|buf_reg                                                                          ; clk          ; clk         ; 1.000        ; -0.097     ; 4.461      ;
+; -3.492 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[3]                             ; pwm:u7|buf_reg                                                                          ; clk          ; clk         ; 1.000        ; -0.103     ; 4.429      ;
+; -3.293 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[4]                             ; pwm:u7|buf_reg                                                                          ; clk          ; clk         ; 1.000        ; -0.108     ; 4.225      ;
+; -3.231 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[5]                             ; pwm:u7|buf_reg                                                                          ; clk          ; clk         ; 1.000        ; -0.104     ; 4.167      ;
+; -2.967 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg0  ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[0] ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg1  ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[0] ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg2  ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[0] ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg3  ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[0] ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg4  ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[0] ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg5  ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[0] ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg6  ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[0] ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg7  ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[0] ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg8  ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[0] ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg9  ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[0] ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg10 ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[0] ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg0  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[0]    ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg1  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[0]    ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg2  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[0]    ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg3  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[0]    ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg4  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[0]    ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg5  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[0]    ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg6  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[0]    ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg7  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[0]    ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg8  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[0]    ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg9  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[0]    ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg10 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[0]    ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg0    ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[1] ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg1    ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[1] ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg2    ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[1] ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg3    ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[1] ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg4    ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[1] ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg5    ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[1] ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg6    ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[1] ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg7    ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[1] ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg8    ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[1] ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg9    ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[1] ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg10   ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[1] ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg0    ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[0]      ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg1    ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[0]      ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg2    ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[0]      ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg3    ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[0]      ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg4    ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[0]      ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg5    ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[0]      ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg6    ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[0]      ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg7    ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[0]      ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg8    ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[0]      ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg9    ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[0]      ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg10   ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[0]      ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg0  ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[1]      ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg1  ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[1]      ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg2  ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[1]      ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg3  ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[1]      ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg4  ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[1]      ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg5  ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[1]      ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg6  ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[1]      ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg7  ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[1]      ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg8  ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[1]      ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg9  ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[1]      ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg10 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[1]      ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg0  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[1]    ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg1  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[1]    ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg2  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[1]    ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg3  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[1]    ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg4  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[1]    ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg5  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[1]    ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg6  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[1]    ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg7  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[1]    ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg8  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[1]    ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg9  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[1]    ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg10 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[1]    ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg0  ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[2] ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
+; -2.967 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg1  ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[2] ; clk          ; clk         ; 1.000        ; -0.020     ; 3.901      ;
++--------+----------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clk'                                                                                                                                                                                                    ;
++-------+-----------------------------+---------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                   ; To Node                                                                                                       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------+---------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.499 ; pwm:u7|r_reg[0]             ; pwm:u7|r_reg[0]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; contador_Phase:u1|r_reg[0]  ; contador_Phase:u1|r_reg[0]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.749 ; contador_Phase:u1|r_reg[10] ; contador_Phase:u1|r_reg[10]                                                                                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.055      ;
+; 0.767 ; pwm:u7|r_reg[10]            ; pwm:u7|r_reg[10]                                                                                              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.073      ;
+; 1.172 ; contador_Phase:u1|r_reg[5]  ; contador_Phase:u1|r_reg[5]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.478      ;
+; 1.173 ; contador_Phase:u1|r_reg[3]  ; contador_Phase:u1|r_reg[3]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.479      ;
+; 1.181 ; contador_Phase:u1|r_reg[7]  ; contador_Phase:u1|r_reg[7]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.487      ;
+; 1.181 ; contador_Phase:u1|r_reg[9]  ; contador_Phase:u1|r_reg[9]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.487      ;
+; 1.185 ; pwm:u7|r_reg[2]             ; pwm:u7|r_reg[2]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.491      ;
+; 1.186 ; pwm:u7|r_reg[9]             ; pwm:u7|r_reg[9]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.492      ;
+; 1.190 ; pwm:u7|r_reg[8]             ; pwm:u7|r_reg[8]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.496      ;
+; 1.194 ; pwm:u7|r_reg[4]             ; pwm:u7|r_reg[4]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.500      ;
+; 1.194 ; pwm:u7|r_reg[6]             ; pwm:u7|r_reg[6]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.500      ;
+; 1.199 ; pwm:u7|r_reg[0]             ; pwm:u7|r_reg[1]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.505      ;
+; 1.221 ; contador_Phase:u1|r_reg[2]  ; contador_Phase:u1|r_reg[2]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.527      ;
+; 1.225 ; contador_Phase:u1|r_reg[4]  ; contador_Phase:u1|r_reg[4]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.531      ;
+; 1.225 ; contador_Phase:u1|r_reg[6]  ; contador_Phase:u1|r_reg[6]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.531      ;
+; 1.226 ; contador_Phase:u1|r_reg[8]  ; contador_Phase:u1|r_reg[8]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.532      ;
+; 1.233 ; contador_Phase:u1|r_reg[1]  ; contador_Phase:u1|r_reg[1]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.539      ;
+; 1.236 ; pwm:u7|r_reg[1]             ; pwm:u7|r_reg[1]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.542      ;
+; 1.241 ; pwm:u7|r_reg[3]             ; pwm:u7|r_reg[3]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.547      ;
+; 1.242 ; pwm:u7|r_reg[5]             ; pwm:u7|r_reg[5]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.548      ;
+; 1.242 ; pwm:u7|r_reg[7]             ; pwm:u7|r_reg[7]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.548      ;
+; 1.340 ; pwm:u7|r_reg[0]             ; contador_Phase:u1|r_reg[0]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.646      ;
+; 1.412 ; pwm:u7|r_reg[10]            ; pwm:u7|buf_reg                                                                                                ; clk          ; clk         ; 0.000        ; 0.002      ; 1.720      ;
+; 1.425 ; contador_Phase:u1|r_reg[3]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg3 ; clk          ; clk         ; 0.000        ; 0.105      ; 1.797      ;
+; 1.432 ; contador_Phase:u1|r_reg[1]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg1 ; clk          ; clk         ; 0.000        ; 0.105      ; 1.804      ;
+; 1.485 ; contador_Phase:u1|r_reg[0]  ; contador_Phase:u1|r_reg[1]                                                                                    ; clk          ; clk         ; 0.000        ; -0.002     ; 1.789      ;
+; 1.521 ; pwm:u7|r_reg[3]             ; contador_Phase:u1|r_reg[0]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.827      ;
+; 1.651 ; contador_Phase:u1|r_reg[5]  ; contador_Phase:u1|r_reg[6]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.957      ;
+; 1.660 ; contador_Phase:u1|r_reg[9]  ; contador_Phase:u1|r_reg[10]                                                                                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.966      ;
+; 1.660 ; contador_Phase:u1|r_reg[7]  ; contador_Phase:u1|r_reg[8]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 1.966      ;
+; 1.665 ; pwm:u7|r_reg[9]             ; pwm:u7|r_reg[10]                                                                                              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.971      ;
+; 1.669 ; pwm:u7|r_reg[8]             ; pwm:u7|r_reg[9]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.975      ;
+; 1.673 ; pwm:u7|r_reg[4]             ; pwm:u7|r_reg[5]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.979      ;
+; 1.673 ; pwm:u7|r_reg[6]             ; pwm:u7|r_reg[7]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.979      ;
+; 1.677 ; pwm:u7|r_reg[0]             ; pwm:u7|r_reg[2]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.983      ;
+; 1.701 ; contador_Phase:u1|r_reg[2]  ; contador_Phase:u1|r_reg[3]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.007      ;
+; 1.705 ; contador_Phase:u1|r_reg[4]  ; contador_Phase:u1|r_reg[5]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.011      ;
+; 1.705 ; contador_Phase:u1|r_reg[6]  ; contador_Phase:u1|r_reg[7]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.011      ;
+; 1.706 ; contador_Phase:u1|r_reg[8]  ; contador_Phase:u1|r_reg[9]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.012      ;
+; 1.710 ; contador_Phase:u1|r_reg[1]  ; contador_Phase:u1|r_reg[2]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.016      ;
+; 1.713 ; pwm:u7|r_reg[1]             ; pwm:u7|r_reg[2]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 2.019      ;
+; 1.721 ; pwm:u7|r_reg[3]             ; pwm:u7|r_reg[4]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 2.027      ;
+; 1.722 ; pwm:u7|r_reg[7]             ; pwm:u7|r_reg[8]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 2.028      ;
+; 1.722 ; pwm:u7|r_reg[5]             ; pwm:u7|r_reg[6]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 2.028      ;
+; 1.723 ; pwm:u7|r_reg[2]             ; contador_Phase:u1|r_reg[0]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.029      ;
+; 1.737 ; contador_Phase:u1|r_reg[5]  ; contador_Phase:u1|r_reg[7]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.043      ;
+; 1.746 ; contador_Phase:u1|r_reg[7]  ; contador_Phase:u1|r_reg[9]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.052      ;
+; 1.755 ; pwm:u7|r_reg[8]             ; pwm:u7|r_reg[10]                                                                                              ; clk          ; clk         ; 0.000        ; 0.000      ; 2.061      ;
+; 1.759 ; pwm:u7|r_reg[6]             ; pwm:u7|r_reg[8]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 2.065      ;
+; 1.759 ; pwm:u7|r_reg[4]             ; pwm:u7|r_reg[6]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 2.065      ;
+; 1.762 ; contador_Phase:u1|r_reg[3]  ; contador_Phase:u1|r_reg[4]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.068      ;
+; 1.765 ; contador_Phase:u1|r_reg[6]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg6 ; clk          ; clk         ; 0.000        ; 0.105      ; 2.137      ;
+; 1.769 ; contador_Phase:u1|r_reg[4]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg4 ; clk          ; clk         ; 0.000        ; 0.105      ; 2.141      ;
+; 1.771 ; pwm:u7|r_reg[10]            ; contador_Phase:u1|r_reg[0]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.077      ;
+; 1.772 ; pwm:u7|r_reg[1]             ; contador_Phase:u1|r_reg[0]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.078      ;
+; 1.774 ; pwm:u7|r_reg[2]             ; pwm:u7|r_reg[3]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 2.080      ;
+; 1.779 ; contador_Phase:u1|r_reg[9]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg9 ; clk          ; clk         ; 0.000        ; 0.105      ; 2.151      ;
+; 1.791 ; contador_Phase:u1|r_reg[4]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a6~porta_address_reg4 ; clk          ; clk         ; 0.000        ; 0.101      ; 2.159      ;
+; 1.791 ; contador_Phase:u1|r_reg[4]  ; contador_Phase:u1|r_reg[6]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.097      ;
+; 1.791 ; contador_Phase:u1|r_reg[6]  ; contador_Phase:u1|r_reg[8]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.097      ;
+; 1.792 ; contador_Phase:u1|r_reg[8]  ; contador_Phase:u1|r_reg[10]                                                                                   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.098      ;
+; 1.793 ; contador_Phase:u1|r_reg[2]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg2 ; clk          ; clk         ; 0.000        ; 0.105      ; 2.165      ;
+; 1.796 ; contador_Phase:u1|r_reg[1]  ; contador_Phase:u1|r_reg[3]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.102      ;
+; 1.807 ; pwm:u7|r_reg[3]             ; pwm:u7|r_reg[5]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 2.113      ;
+; 1.808 ; pwm:u7|r_reg[7]             ; pwm:u7|r_reg[9]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 2.114      ;
+; 1.808 ; pwm:u7|r_reg[5]             ; pwm:u7|r_reg[7]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 2.114      ;
+; 1.813 ; contador_Phase:u1|r_reg[0]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg0 ; clk          ; clk         ; 0.000        ; 0.119      ; 2.199      ;
+; 1.814 ; contador_Phase:u1|r_reg[6]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a6~porta_address_reg6 ; clk          ; clk         ; 0.000        ; 0.101      ; 2.182      ;
+; 1.816 ; contador_Phase:u1|r_reg[7]  ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg7   ; clk          ; clk         ; 0.000        ; 0.121      ; 2.204      ;
+; 1.817 ; contador_Phase:u1|r_reg[1]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a6~porta_address_reg1 ; clk          ; clk         ; 0.000        ; 0.101      ; 2.185      ;
+; 1.821 ; contador_Phase:u1|r_reg[1]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a4~porta_address_reg1 ; clk          ; clk         ; 0.000        ; 0.117      ; 2.205      ;
+; 1.822 ; contador_Phase:u1|r_reg[0]  ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg0   ; clk          ; clk         ; 0.000        ; 0.119      ; 2.208      ;
+; 1.823 ; contador_Phase:u1|r_reg[9]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a4~porta_address_reg9 ; clk          ; clk         ; 0.000        ; 0.117      ; 2.207      ;
+; 1.823 ; contador_Phase:u1|r_reg[5]  ; contador_Phase:u1|r_reg[8]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.129      ;
+; 1.826 ; pwm:u7|r_reg[4]             ; contador_Phase:u1|r_reg[0]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.132      ;
+; 1.828 ; contador_Phase:u1|r_reg[0]  ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a4~porta_address_reg0   ; clk          ; clk         ; 0.000        ; 0.130      ; 2.225      ;
+; 1.828 ; contador_Phase:u1|r_reg[0]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a5~porta_address_reg0 ; clk          ; clk         ; 0.000        ; 0.126      ; 2.221      ;
+; 1.829 ; contador_Phase:u1|r_reg[0]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a4~porta_address_reg0 ; clk          ; clk         ; 0.000        ; 0.115      ; 2.211      ;
+; 1.829 ; contador_Phase:u1|r_reg[7]  ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a4~porta_address_reg7   ; clk          ; clk         ; 0.000        ; 0.132      ; 2.228      ;
+; 1.832 ; contador_Phase:u1|r_reg[1]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg1 ; clk          ; clk         ; 0.000        ; 0.121      ; 2.220      ;
+; 1.832 ; contador_Phase:u1|r_reg[7]  ; contador_Phase:u1|r_reg[10]                                                                                   ; clk          ; clk         ; 0.000        ; 0.000      ; 2.138      ;
+; 1.836 ; contador_Phase:u1|r_reg[0]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a3~porta_address_reg0 ; clk          ; clk         ; 0.000        ; 0.125      ; 2.228      ;
+; 1.839 ; contador_Phase:u1|r_reg[1]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a3~porta_address_reg1 ; clk          ; clk         ; 0.000        ; 0.127      ; 2.233      ;
+; 1.840 ; contador_Phase:u1|r_reg[7]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a3~porta_address_reg7 ; clk          ; clk         ; 0.000        ; 0.127      ; 2.234      ;
+; 1.841 ; contador_Phase:u1|r_reg[7]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg7 ; clk          ; clk         ; 0.000        ; 0.107      ; 2.215      ;
+; 1.842 ; contador_Phase:u1|r_reg[1]  ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a2~porta_address_reg1   ; clk          ; clk         ; 0.000        ; 0.124      ; 2.233      ;
+; 1.844 ; contador_Phase:u1|r_reg[1]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg1 ; clk          ; clk         ; 0.000        ; 0.107      ; 2.218      ;
+; 1.845 ; pwm:u7|r_reg[6]             ; pwm:u7|r_reg[9]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 2.151      ;
+; 1.845 ; pwm:u7|r_reg[4]             ; pwm:u7|r_reg[7]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 2.151      ;
+; 1.848 ; contador_Phase:u1|r_reg[3]  ; contador_Phase:u1|r_reg[5]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 2.154      ;
+; 1.849 ; contador_Phase:u1|r_reg[2]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a6~porta_address_reg2 ; clk          ; clk         ; 0.000        ; 0.101      ; 2.217      ;
+; 1.855 ; contador_Phase:u1|r_reg[3]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg3 ; clk          ; clk         ; 0.000        ; 0.107      ; 2.229      ;
+; 1.855 ; contador_Phase:u1|r_reg[1]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a5~porta_address_reg1 ; clk          ; clk         ; 0.000        ; 0.128      ; 2.250      ;
+; 1.857 ; contador_Phase:u1|r_reg[3]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg3 ; clk          ; clk         ; 0.000        ; 0.121      ; 2.245      ;
+; 1.859 ; contador_Phase:u1|r_reg[3]  ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg3   ; clk          ; clk         ; 0.000        ; 0.121      ; 2.247      ;
+; 1.859 ; contador_Phase:u1|r_reg[3]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a3~porta_address_reg3 ; clk          ; clk         ; 0.000        ; 0.127      ; 2.253      ;
+; 1.860 ; pwm:u7|r_reg[2]             ; pwm:u7|r_reg[4]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 2.166      ;
+; 1.862 ; contador_Phase:u1|r_reg[1]  ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg1   ; clk          ; clk         ; 0.000        ; 0.121      ; 2.250      ;
++-------+-----------------------------+---------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clk'                                                                                                                                                            ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                                                                                          ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------------------------------------------------------------+
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[0]                            ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[0]                            ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[10]                           ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[10]                           ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[1]                            ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[1]                            ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[2]                            ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[2]                            ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[3]                            ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[3]                            ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[4]                            ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[4]                            ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[5]                            ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[5]                            ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[6]                            ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[6]                            ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[7]                            ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[7]                            ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[8]                            ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[8]                            ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[9]                            ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[9]                            ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg0   ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg0   ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg1   ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg1   ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg10  ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg10  ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg2   ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg2   ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg3   ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg3   ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg4   ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg4   ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg5   ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg5   ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg6   ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg6   ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg7   ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg7   ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg8   ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg8   ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg9   ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg9   ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a10~porta_address_reg0  ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a10~porta_address_reg0  ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a10~porta_address_reg1  ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a10~porta_address_reg1  ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a10~porta_address_reg10 ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a10~porta_address_reg10 ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a10~porta_address_reg2  ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a10~porta_address_reg2  ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a10~porta_address_reg3  ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a10~porta_address_reg3  ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a10~porta_address_reg4  ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a10~porta_address_reg4  ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a10~porta_address_reg5  ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a10~porta_address_reg5  ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a10~porta_address_reg6  ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a10~porta_address_reg6  ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a10~porta_address_reg7  ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a10~porta_address_reg7  ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a10~porta_address_reg8  ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a10~porta_address_reg8  ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a10~porta_address_reg9  ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a10~porta_address_reg9  ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg0   ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg0   ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg1   ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg1   ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg10  ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg10  ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg2   ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg2   ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg3   ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg3   ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg4   ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg4   ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg5   ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg5   ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg6   ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg6   ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg7   ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg7   ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg8   ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg8   ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg9   ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg9   ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg0   ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg0   ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg1   ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg1   ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg10  ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg10  ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg2   ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg2   ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg3   ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg3   ;
+; -2.277 ; 0.500        ; 2.777          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg4   ;
+; -2.277 ; 0.500        ; 2.777          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg4   ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------+
+; Setup Times                                                                 ;
++---------------+------------+--------+--------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++---------------+------------+--------+--------+------------+-----------------+
+; onda_ctrl[*]  ; clk        ; 10.089 ; 10.089 ; Rise       ; clk             ;
+;  onda_ctrl[0] ; clk        ; 9.864  ; 9.864  ; Rise       ; clk             ;
+;  onda_ctrl[1] ; clk        ; 10.089 ; 10.089 ; Rise       ; clk             ;
++---------------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------+
+; Hold Times                                                                  ;
++---------------+------------+--------+--------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++---------------+------------+--------+--------+------------+-----------------+
+; onda_ctrl[*]  ; clk        ; -6.159 ; -6.159 ; Rise       ; clk             ;
+;  onda_ctrl[0] ; clk        ; -6.225 ; -6.225 ; Rise       ; clk             ;
+;  onda_ctrl[1] ; clk        ; -6.159 ; -6.159 ; Rise       ; clk             ;
++---------------+------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------------------------------+
+; Clock to Output Times                                                            ;
++--------------------+------------+--------+--------+------------+-----------------+
+; Data Port          ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------------+------------+--------+--------+------------+-----------------+
+; prueba_salida[*]   ; clk        ; 13.521 ; 13.521 ; Rise       ; clk             ;
+;  prueba_salida[0]  ; clk        ; 11.020 ; 11.020 ; Rise       ; clk             ;
+;  prueba_salida[1]  ; clk        ; 10.797 ; 10.797 ; Rise       ; clk             ;
+;  prueba_salida[2]  ; clk        ; 11.212 ; 11.212 ; Rise       ; clk             ;
+;  prueba_salida[3]  ; clk        ; 11.585 ; 11.585 ; Rise       ; clk             ;
+;  prueba_salida[4]  ; clk        ; 11.731 ; 11.731 ; Rise       ; clk             ;
+;  prueba_salida[5]  ; clk        ; 11.406 ; 11.406 ; Rise       ; clk             ;
+;  prueba_salida[6]  ; clk        ; 10.622 ; 10.622 ; Rise       ; clk             ;
+;  prueba_salida[7]  ; clk        ; 10.863 ; 10.863 ; Rise       ; clk             ;
+;  prueba_salida[8]  ; clk        ; 10.898 ; 10.898 ; Rise       ; clk             ;
+;  prueba_salida[9]  ; clk        ; 10.959 ; 10.959 ; Rise       ; clk             ;
+;  prueba_salida[10] ; clk        ; 13.521 ; 13.521 ; Rise       ; clk             ;
+; salida             ; clk        ; 8.396  ; 8.396  ; Rise       ; clk             ;
++--------------------+------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                    ;
++--------------------+------------+--------+--------+------------+-----------------+
+; Data Port          ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------------+------------+--------+--------+------------+-----------------+
+; prueba_salida[*]   ; clk        ; 10.258 ; 10.258 ; Rise       ; clk             ;
+;  prueba_salida[0]  ; clk        ; 10.268 ; 10.268 ; Rise       ; clk             ;
+;  prueba_salida[1]  ; clk        ; 10.258 ; 10.258 ; Rise       ; clk             ;
+;  prueba_salida[2]  ; clk        ; 10.537 ; 10.537 ; Rise       ; clk             ;
+;  prueba_salida[3]  ; clk        ; 10.821 ; 10.821 ; Rise       ; clk             ;
+;  prueba_salida[4]  ; clk        ; 10.999 ; 10.999 ; Rise       ; clk             ;
+;  prueba_salida[5]  ; clk        ; 10.904 ; 10.904 ; Rise       ; clk             ;
+;  prueba_salida[6]  ; clk        ; 10.454 ; 10.454 ; Rise       ; clk             ;
+;  prueba_salida[7]  ; clk        ; 10.272 ; 10.272 ; Rise       ; clk             ;
+;  prueba_salida[8]  ; clk        ; 10.366 ; 10.366 ; Rise       ; clk             ;
+;  prueba_salida[9]  ; clk        ; 10.391 ; 10.391 ; Rise       ; clk             ;
+;  prueba_salida[10] ; clk        ; 11.989 ; 11.989 ; Rise       ; clk             ;
+; salida             ; clk        ; 8.396  ; 8.396  ; Rise       ; clk             ;
++--------------------+------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------------------+
+; Propagation Delay                                                    ;
++--------------+-------------------+--------+--------+--------+--------+
+; Input Port   ; Output Port       ; RR     ; RF     ; FR     ; FF     ;
++--------------+-------------------+--------+--------+--------+--------+
+; onda_ctrl[0] ; prueba_salida[0]  ; 15.468 ; 15.468 ; 15.468 ; 15.468 ;
+; onda_ctrl[0] ; prueba_salida[1]  ; 14.751 ; 14.751 ; 14.751 ; 14.751 ;
+; onda_ctrl[0] ; prueba_salida[2]  ; 15.270 ; 15.270 ; 15.270 ; 15.270 ;
+; onda_ctrl[0] ; prueba_salida[3]  ; 14.950 ; 14.950 ; 14.950 ; 14.950 ;
+; onda_ctrl[0] ; prueba_salida[4]  ; 15.677 ; 15.677 ; 15.677 ; 15.677 ;
+; onda_ctrl[0] ; prueba_salida[5]  ; 15.254 ; 15.254 ; 15.254 ; 15.254 ;
+; onda_ctrl[0] ; prueba_salida[6]  ; 14.501 ; 14.501 ; 14.501 ; 14.501 ;
+; onda_ctrl[0] ; prueba_salida[7]  ; 14.401 ; 14.401 ; 14.401 ; 14.401 ;
+; onda_ctrl[0] ; prueba_salida[8]  ; 14.441 ; 14.441 ; 14.441 ; 14.441 ;
+; onda_ctrl[0] ; prueba_salida[9]  ; 14.434 ; 14.434 ; 14.434 ; 14.434 ;
+; onda_ctrl[0] ; prueba_salida[10] ; 17.015 ; 17.015 ; 17.015 ; 17.015 ;
+; onda_ctrl[1] ; prueba_salida[0]  ; 14.814 ; 14.814 ; 14.814 ; 14.814 ;
+; onda_ctrl[1] ; prueba_salida[1]  ; 14.834 ; 14.834 ; 14.834 ; 14.834 ;
+; onda_ctrl[1] ; prueba_salida[2]  ; 15.278 ; 15.278 ; 15.278 ; 15.278 ;
+; onda_ctrl[1] ; prueba_salida[3]  ; 15.281 ; 15.281 ; 15.281 ; 15.281 ;
+; onda_ctrl[1] ; prueba_salida[4]  ; 15.431 ; 15.431 ; 15.431 ; 15.431 ;
+; onda_ctrl[1] ; prueba_salida[5]  ; 15.339 ; 15.339 ; 15.339 ; 15.339 ;
+; onda_ctrl[1] ; prueba_salida[6]  ; 14.961 ; 14.961 ; 14.961 ; 14.961 ;
+; onda_ctrl[1] ; prueba_salida[7]  ; 14.788 ; 14.788 ; 14.788 ; 14.788 ;
+; onda_ctrl[1] ; prueba_salida[8]  ; 14.827 ; 14.827 ; 14.827 ; 14.827 ;
+; onda_ctrl[1] ; prueba_salida[9]  ; 14.821 ; 14.821 ; 14.821 ; 14.821 ;
+; onda_ctrl[1] ; prueba_salida[10] ; 17.402 ; 17.402 ; 17.402 ; 17.402 ;
++--------------+-------------------+--------+--------+--------+--------+
+
+
++----------------------------------------------------------------------+
+; Minimum Propagation Delay                                            ;
++--------------+-------------------+--------+--------+--------+--------+
+; Input Port   ; Output Port       ; RR     ; RF     ; FR     ; FF     ;
++--------------+-------------------+--------+--------+--------+--------+
+; onda_ctrl[0] ; prueba_salida[0]  ; 13.858 ; 13.858 ; 13.858 ; 13.858 ;
+; onda_ctrl[0] ; prueba_salida[1]  ; 14.197 ; 14.197 ; 14.197 ; 14.197 ;
+; onda_ctrl[0] ; prueba_salida[2]  ; 13.992 ; 13.992 ; 13.992 ; 13.992 ;
+; onda_ctrl[0] ; prueba_salida[3]  ; 14.568 ; 14.568 ; 14.568 ; 14.568 ;
+; onda_ctrl[0] ; prueba_salida[4]  ; 14.566 ; 14.566 ; 14.566 ; 14.566 ;
+; onda_ctrl[0] ; prueba_salida[5]  ; 14.617 ; 14.617 ; 14.617 ; 14.617 ;
+; onda_ctrl[0] ; prueba_salida[6]  ; 13.870 ; 13.870 ; 13.870 ; 13.870 ;
+; onda_ctrl[0] ; prueba_salida[7]  ; 13.850 ; 13.850 ; 13.850 ; 13.850 ;
+; onda_ctrl[0] ; prueba_salida[8]  ; 13.893 ; 13.893 ; 13.893 ; 13.893 ;
+; onda_ctrl[0] ; prueba_salida[9]  ; 13.874 ; 13.874 ; 13.874 ; 13.874 ;
+; onda_ctrl[0] ; prueba_salida[10] ; 14.950 ; 14.950 ; 14.950 ; 14.950 ;
+; onda_ctrl[1] ; prueba_salida[0]  ; 13.793 ; 13.793 ; 13.793 ; 13.793 ;
+; onda_ctrl[1] ; prueba_salida[1]  ; 14.237 ; 14.237 ; 14.237 ; 14.237 ;
+; onda_ctrl[1] ; prueba_salida[2]  ; 14.332 ; 14.332 ; 14.332 ; 14.332 ;
+; onda_ctrl[1] ; prueba_salida[3]  ; 14.605 ; 14.605 ; 14.605 ; 14.605 ;
+; onda_ctrl[1] ; prueba_salida[4]  ; 14.500 ; 14.500 ; 14.500 ; 14.500 ;
+; onda_ctrl[1] ; prueba_salida[5]  ; 14.652 ; 14.652 ; 14.652 ; 14.652 ;
+; onda_ctrl[1] ; prueba_salida[6]  ; 14.285 ; 14.285 ; 14.285 ; 14.285 ;
+; onda_ctrl[1] ; prueba_salida[7]  ; 14.264 ; 14.264 ; 14.264 ; 14.264 ;
+; onda_ctrl[1] ; prueba_salida[8]  ; 14.306 ; 14.306 ; 14.306 ; 14.306 ;
+; onda_ctrl[1] ; prueba_salida[9]  ; 14.288 ; 14.288 ; 14.288 ; 14.288 ;
+; onda_ctrl[1] ; prueba_salida[10] ; 14.884 ; 14.884 ; 14.884 ; 14.884 ;
++--------------+-------------------+--------+--------+--------+--------+
+
+
++--------------------------------+
+; Fast Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -0.979 ; -38.645       ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.215 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; -1.423 ; -650.500              ;
++-------+--------+-----------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clk'                                                                                                                                                                                                                                                                 ;
++--------+----------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                                                                      ; To Node                                                                                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg0  ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[0] ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg1  ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[0] ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg2  ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[0] ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg3  ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[0] ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg4  ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[0] ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg5  ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[0] ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg6  ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[0] ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg7  ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[0] ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg8  ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[0] ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg9  ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[0] ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg10 ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[0] ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg0  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[0]    ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg1  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[0]    ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg2  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[0]    ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg3  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[0]    ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg4  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[0]    ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg5  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[0]    ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg6  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[0]    ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg7  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[0]    ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg8  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[0]    ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg9  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[0]    ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg10 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[0]    ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg0    ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[1] ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg1    ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[1] ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg2    ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[1] ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg3    ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[1] ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg4    ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[1] ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg5    ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[1] ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg6    ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[1] ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg7    ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[1] ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg8    ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[1] ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg9    ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[1] ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg10   ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[1] ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg0    ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[0]      ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg1    ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[0]      ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg2    ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[0]      ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg3    ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[0]      ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg4    ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[0]      ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg5    ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[0]      ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg6    ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[0]      ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg7    ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[0]      ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg8    ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[0]      ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg9    ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[0]      ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg10   ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[0]      ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg0  ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[1]      ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg1  ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[1]      ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg2  ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[1]      ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg3  ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[1]      ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg4  ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[1]      ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg5  ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[1]      ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg6  ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[1]      ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg7  ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[1]      ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg8  ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[1]      ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg9  ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[1]      ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg10 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[1]      ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg0  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[1]    ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg1  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[1]    ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg2  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[1]    ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg3  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[1]    ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg4  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[1]    ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg5  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[1]    ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg6  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[1]    ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg7  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[1]    ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg8  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[1]    ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg9  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[1]    ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg10 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[1]    ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg0  ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[2] ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg1  ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[2] ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg2  ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[2] ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg3  ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[2] ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg4  ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[2] ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg5  ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[2] ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg6  ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[2] ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg7  ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[2] ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg8  ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[2] ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg9  ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[2] ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg10 ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[2] ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg0  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[2]    ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg1  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[2]    ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg2  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[2]    ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg3  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[2]    ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg4  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[2]    ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg5  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[2]    ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg6  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[2]    ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg7  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[2]    ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg8  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[2]    ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg9  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[2]    ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg10 ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[2]    ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a2~porta_address_reg0    ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[3] ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a2~porta_address_reg1    ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[3] ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a2~porta_address_reg2    ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[3] ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a2~porta_address_reg3    ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[3] ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a2~porta_address_reg4    ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[3] ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a2~porta_address_reg5    ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[3] ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a2~porta_address_reg6    ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[3] ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a2~porta_address_reg7    ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[3] ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a2~porta_address_reg8    ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[3] ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a2~porta_address_reg9    ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[3] ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a2~porta_address_reg10   ; triangulo_wave:u5|altsyncram:altsyncram_component|altsyncram_4g81:auto_generated|q_a[3] ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
+; -0.979 ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a2~porta_address_reg0    ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|q_a[2]      ; clk          ; clk         ; 1.000        ; -0.018     ; 1.960      ;
++--------+----------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clk'                                                                                                                                                                                                    ;
++-------+-----------------------------+---------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                   ; To Node                                                                                                       ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------+---------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; pwm:u7|r_reg[0]             ; pwm:u7|r_reg[0]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; contador_Phase:u1|r_reg[0]  ; contador_Phase:u1|r_reg[0]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.241 ; contador_Phase:u1|r_reg[10] ; contador_Phase:u1|r_reg[10]                                                                                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.393      ;
+; 0.249 ; pwm:u7|r_reg[10]            ; pwm:u7|r_reg[10]                                                                                              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.401      ;
+; 0.358 ; contador_Phase:u1|r_reg[5]  ; contador_Phase:u1|r_reg[5]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.510      ;
+; 0.359 ; contador_Phase:u1|r_reg[3]  ; contador_Phase:u1|r_reg[3]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.511      ;
+; 0.361 ; contador_Phase:u1|r_reg[7]  ; contador_Phase:u1|r_reg[7]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; contador_Phase:u1|r_reg[9]  ; contador_Phase:u1|r_reg[9]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.513      ;
+; 0.365 ; pwm:u7|r_reg[2]             ; pwm:u7|r_reg[2]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.517      ;
+; 0.365 ; pwm:u7|r_reg[9]             ; pwm:u7|r_reg[9]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.517      ;
+; 0.367 ; pwm:u7|r_reg[8]             ; pwm:u7|r_reg[8]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.519      ;
+; 0.368 ; pwm:u7|r_reg[4]             ; pwm:u7|r_reg[4]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.520      ;
+; 0.368 ; pwm:u7|r_reg[6]             ; pwm:u7|r_reg[6]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.520      ;
+; 0.369 ; contador_Phase:u1|r_reg[2]  ; contador_Phase:u1|r_reg[2]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.521      ;
+; 0.371 ; contador_Phase:u1|r_reg[4]  ; contador_Phase:u1|r_reg[4]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.523      ;
+; 0.371 ; contador_Phase:u1|r_reg[6]  ; contador_Phase:u1|r_reg[6]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.523      ;
+; 0.372 ; contador_Phase:u1|r_reg[1]  ; contador_Phase:u1|r_reg[1]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.524      ;
+; 0.372 ; contador_Phase:u1|r_reg[8]  ; contador_Phase:u1|r_reg[8]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.524      ;
+; 0.375 ; pwm:u7|r_reg[0]             ; pwm:u7|r_reg[1]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.527      ;
+; 0.376 ; pwm:u7|r_reg[1]             ; pwm:u7|r_reg[1]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.528      ;
+; 0.379 ; pwm:u7|r_reg[3]             ; pwm:u7|r_reg[3]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.531      ;
+; 0.380 ; pwm:u7|r_reg[5]             ; pwm:u7|r_reg[5]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.532      ;
+; 0.380 ; pwm:u7|r_reg[7]             ; pwm:u7|r_reg[7]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.532      ;
+; 0.416 ; pwm:u7|r_reg[0]             ; contador_Phase:u1|r_reg[0]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.568      ;
+; 0.420 ; contador_Phase:u1|r_reg[3]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg3 ; clk          ; clk         ; 0.000        ; 0.064      ; 0.622      ;
+; 0.423 ; contador_Phase:u1|r_reg[1]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg1 ; clk          ; clk         ; 0.000        ; 0.064      ; 0.625      ;
+; 0.449 ; contador_Phase:u1|r_reg[0]  ; contador_Phase:u1|r_reg[1]                                                                                    ; clk          ; clk         ; 0.000        ; -0.001     ; 0.600      ;
+; 0.450 ; pwm:u7|r_reg[10]            ; pwm:u7|buf_reg                                                                                                ; clk          ; clk         ; 0.000        ; 0.001      ; 0.603      ;
+; 0.496 ; contador_Phase:u1|r_reg[5]  ; contador_Phase:u1|r_reg[6]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.648      ;
+; 0.499 ; contador_Phase:u1|r_reg[9]  ; contador_Phase:u1|r_reg[10]                                                                                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.651      ;
+; 0.499 ; contador_Phase:u1|r_reg[7]  ; contador_Phase:u1|r_reg[8]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.651      ;
+; 0.500 ; pwm:u7|r_reg[3]             ; contador_Phase:u1|r_reg[0]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.652      ;
+; 0.503 ; pwm:u7|r_reg[9]             ; pwm:u7|r_reg[10]                                                                                              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.655      ;
+; 0.505 ; pwm:u7|r_reg[8]             ; pwm:u7|r_reg[9]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.506 ; pwm:u7|r_reg[4]             ; pwm:u7|r_reg[5]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.658      ;
+; 0.506 ; pwm:u7|r_reg[6]             ; pwm:u7|r_reg[7]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.658      ;
+; 0.509 ; contador_Phase:u1|r_reg[2]  ; contador_Phase:u1|r_reg[3]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.661      ;
+; 0.510 ; pwm:u7|r_reg[0]             ; pwm:u7|r_reg[2]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.662      ;
+; 0.511 ; contador_Phase:u1|r_reg[4]  ; contador_Phase:u1|r_reg[5]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.663      ;
+; 0.511 ; contador_Phase:u1|r_reg[6]  ; contador_Phase:u1|r_reg[7]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.663      ;
+; 0.512 ; contador_Phase:u1|r_reg[8]  ; contador_Phase:u1|r_reg[9]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.664      ;
+; 0.512 ; contador_Phase:u1|r_reg[1]  ; contador_Phase:u1|r_reg[2]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.664      ;
+; 0.516 ; pwm:u7|r_reg[1]             ; pwm:u7|r_reg[2]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.668      ;
+; 0.518 ; contador_Phase:u1|r_reg[6]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg6 ; clk          ; clk         ; 0.000        ; 0.064      ; 0.720      ;
+; 0.519 ; pwm:u7|r_reg[3]             ; pwm:u7|r_reg[4]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.671      ;
+; 0.520 ; contador_Phase:u1|r_reg[4]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg4 ; clk          ; clk         ; 0.000        ; 0.064      ; 0.722      ;
+; 0.520 ; pwm:u7|r_reg[7]             ; pwm:u7|r_reg[8]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.672      ;
+; 0.520 ; pwm:u7|r_reg[5]             ; pwm:u7|r_reg[6]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.672      ;
+; 0.524 ; contador_Phase:u1|r_reg[9]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg9 ; clk          ; clk         ; 0.000        ; 0.064      ; 0.726      ;
+; 0.531 ; contador_Phase:u1|r_reg[5]  ; contador_Phase:u1|r_reg[7]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.683      ;
+; 0.533 ; contador_Phase:u1|r_reg[2]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg2 ; clk          ; clk         ; 0.000        ; 0.064      ; 0.735      ;
+; 0.534 ; contador_Phase:u1|r_reg[0]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg0 ; clk          ; clk         ; 0.000        ; 0.080      ; 0.752      ;
+; 0.534 ; contador_Phase:u1|r_reg[9]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a4~porta_address_reg9 ; clk          ; clk         ; 0.000        ; 0.077      ; 0.749      ;
+; 0.534 ; contador_Phase:u1|r_reg[1]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a4~porta_address_reg1 ; clk          ; clk         ; 0.000        ; 0.077      ; 0.749      ;
+; 0.534 ; contador_Phase:u1|r_reg[7]  ; contador_Phase:u1|r_reg[9]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.686      ;
+; 0.537 ; pwm:u7|r_reg[2]             ; contador_Phase:u1|r_reg[0]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.689      ;
+; 0.538 ; contador_Phase:u1|r_reg[4]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a6~porta_address_reg4 ; clk          ; clk         ; 0.000        ; 0.061      ; 0.737      ;
+; 0.540 ; pwm:u7|r_reg[10]            ; contador_Phase:u1|r_reg[0]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.692      ;
+; 0.540 ; pwm:u7|r_reg[8]             ; pwm:u7|r_reg[10]                                                                                              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.692      ;
+; 0.541 ; contador_Phase:u1|r_reg[7]  ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg7   ; clk          ; clk         ; 0.000        ; 0.079      ; 0.758      ;
+; 0.541 ; pwm:u7|r_reg[6]             ; pwm:u7|r_reg[8]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.693      ;
+; 0.541 ; pwm:u7|r_reg[4]             ; pwm:u7|r_reg[6]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.693      ;
+; 0.543 ; contador_Phase:u1|r_reg[0]  ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg0   ; clk          ; clk         ; 0.000        ; 0.078      ; 0.759      ;
+; 0.543 ; contador_Phase:u1|r_reg[1]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg1 ; clk          ; clk         ; 0.000        ; 0.081      ; 0.762      ;
+; 0.543 ; contador_Phase:u1|r_reg[0]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a4~porta_address_reg0 ; clk          ; clk         ; 0.000        ; 0.076      ; 0.757      ;
+; 0.544 ; contador_Phase:u1|r_reg[0]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a5~porta_address_reg0 ; clk          ; clk         ; 0.000        ; 0.086      ; 0.768      ;
+; 0.546 ; contador_Phase:u1|r_reg[4]  ; contador_Phase:u1|r_reg[6]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.698      ;
+; 0.546 ; contador_Phase:u1|r_reg[6]  ; contador_Phase:u1|r_reg[8]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.698      ;
+; 0.547 ; contador_Phase:u1|r_reg[7]  ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a4~porta_address_reg7   ; clk          ; clk         ; 0.000        ; 0.089      ; 0.774      ;
+; 0.547 ; contador_Phase:u1|r_reg[8]  ; contador_Phase:u1|r_reg[10]                                                                                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.699      ;
+; 0.547 ; contador_Phase:u1|r_reg[1]  ; contador_Phase:u1|r_reg[3]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.699      ;
+; 0.549 ; contador_Phase:u1|r_reg[1]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a6~porta_address_reg1 ; clk          ; clk         ; 0.000        ; 0.061      ; 0.748      ;
+; 0.550 ; contador_Phase:u1|r_reg[1]  ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a2~porta_address_reg1   ; clk          ; clk         ; 0.000        ; 0.085      ; 0.773      ;
+; 0.550 ; contador_Phase:u1|r_reg[7]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a3~porta_address_reg7 ; clk          ; clk         ; 0.000        ; 0.085      ; 0.773      ;
+; 0.550 ; contador_Phase:u1|r_reg[0]  ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a4~porta_address_reg0   ; clk          ; clk         ; 0.000        ; 0.088      ; 0.776      ;
+; 0.550 ; pwm:u7|r_reg[1]             ; contador_Phase:u1|r_reg[0]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.702      ;
+; 0.552 ; contador_Phase:u1|r_reg[6]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a6~porta_address_reg6 ; clk          ; clk         ; 0.000        ; 0.061      ; 0.751      ;
+; 0.552 ; contador_Phase:u1|r_reg[3]  ; contador_Phase:u1|r_reg[4]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.704      ;
+; 0.553 ; contador_Phase:u1|r_reg[1]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a3~porta_address_reg1 ; clk          ; clk         ; 0.000        ; 0.085      ; 0.776      ;
+; 0.553 ; contador_Phase:u1|r_reg[0]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a3~porta_address_reg0 ; clk          ; clk         ; 0.000        ; 0.084      ; 0.775      ;
+; 0.554 ; contador_Phase:u1|r_reg[7]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg7 ; clk          ; clk         ; 0.000        ; 0.065      ; 0.757      ;
+; 0.554 ; pwm:u7|r_reg[3]             ; pwm:u7|r_reg[5]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.706      ;
+; 0.555 ; pwm:u7|r_reg[7]             ; pwm:u7|r_reg[9]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.707      ;
+; 0.555 ; pwm:u7|r_reg[5]             ; pwm:u7|r_reg[7]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.707      ;
+; 0.556 ; pwm:u7|r_reg[4]             ; contador_Phase:u1|r_reg[0]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.708      ;
+; 0.557 ; contador_Phase:u1|r_reg[3]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg3 ; clk          ; clk         ; 0.000        ; 0.065      ; 0.760      ;
+; 0.557 ; contador_Phase:u1|r_reg[1]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg1 ; clk          ; clk         ; 0.000        ; 0.065      ; 0.760      ;
+; 0.558 ; contador_Phase:u1|r_reg[3]  ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg3   ; clk          ; clk         ; 0.000        ; 0.079      ; 0.775      ;
+; 0.558 ; contador_Phase:u1|r_reg[3]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg3 ; clk          ; clk         ; 0.000        ; 0.081      ; 0.777      ;
+; 0.558 ; contador_Phase:u1|r_reg[1]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a5~porta_address_reg1 ; clk          ; clk         ; 0.000        ; 0.087      ; 0.783      ;
+; 0.558 ; pwm:u7|r_reg[2]             ; pwm:u7|r_reg[3]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.710      ;
+; 0.559 ; contador_Phase:u1|r_reg[3]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a3~porta_address_reg3 ; clk          ; clk         ; 0.000        ; 0.085      ; 0.782      ;
+; 0.562 ; contador_Phase:u1|r_reg[1]  ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a0~porta_address_reg1   ; clk          ; clk         ; 0.000        ; 0.079      ; 0.779      ;
+; 0.562 ; contador_Phase:u1|r_reg[0]  ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a2~porta_address_reg0   ; clk          ; clk         ; 0.000        ; 0.084      ; 0.784      ;
+; 0.565 ; contador_Phase:u1|r_reg[3]  ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a4~porta_address_reg3   ; clk          ; clk         ; 0.000        ; 0.089      ; 0.792      ;
+; 0.566 ; contador_Phase:u1|r_reg[5]  ; contador_Phase:u1|r_reg[8]                                                                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.718      ;
+; 0.569 ; contador_Phase:u1|r_reg[7]  ; contador_Phase:u1|r_reg[10]                                                                                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.721      ;
+; 0.572 ; contador_Phase:u1|r_reg[1]  ; sine_wave:u3|altsyncram:altsyncram_component|altsyncram_t281:auto_generated|ram_block1a4~porta_address_reg1   ; clk          ; clk         ; 0.000        ; 0.089      ; 0.799      ;
+; 0.572 ; contador_Phase:u1|r_reg[2]  ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a6~porta_address_reg2 ; clk          ; clk         ; 0.000        ; 0.061      ; 0.771      ;
+; 0.576 ; pwm:u7|r_reg[6]             ; pwm:u7|r_reg[9]                                                                                               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.728      ;
++-------+-----------------------------+---------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clk'                                                                                                                                                            ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                                                                                          ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------------------------------------------------------------+
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[0]                            ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[0]                            ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[10]                           ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[10]                           ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[1]                            ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[1]                            ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[2]                            ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[2]                            ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[3]                            ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[3]                            ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[4]                            ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[4]                            ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[5]                            ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[5]                            ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[6]                            ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[6]                            ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[7]                            ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[7]                            ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[8]                            ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[8]                            ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[9]                            ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|q_a[9]                            ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg0   ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg0   ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg1   ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg1   ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg10  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg10  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg2   ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg2   ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg3   ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg3   ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg4   ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg4   ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg5   ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg5   ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg6   ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg6   ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg7   ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg7   ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg8   ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg8   ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg9   ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a0~porta_address_reg9   ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a10~porta_address_reg0  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a10~porta_address_reg0  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a10~porta_address_reg1  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a10~porta_address_reg1  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a10~porta_address_reg10 ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a10~porta_address_reg10 ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a10~porta_address_reg2  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a10~porta_address_reg2  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a10~porta_address_reg3  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a10~porta_address_reg3  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a10~porta_address_reg4  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a10~porta_address_reg4  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a10~porta_address_reg5  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a10~porta_address_reg5  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a10~porta_address_reg6  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a10~porta_address_reg6  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a10~porta_address_reg7  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a10~porta_address_reg7  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a10~porta_address_reg8  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a10~porta_address_reg8  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a10~porta_address_reg9  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a10~porta_address_reg9  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg0   ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg0   ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg1   ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg1   ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg10  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg10  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg2   ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg2   ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg3   ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg3   ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg4   ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg4   ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg5   ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg5   ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg6   ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg6   ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg7   ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg7   ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg8   ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg8   ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg9   ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a1~porta_address_reg9   ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg0   ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg0   ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg1   ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg1   ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg10  ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg10  ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg2   ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg2   ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg3   ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg3   ;
+; -1.423 ; 0.500        ; 1.923          ; High Pulse Width ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg4   ;
+; -1.423 ; 0.500        ; 1.923          ; Low Pulse Width  ; clk   ; Rise       ; sierra_wave:u4|altsyncram:altsyncram_component|altsyncram_k981:auto_generated|ram_block1a2~porta_address_reg4   ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------+
+; Setup Times                                                               ;
++---------------+------------+-------+-------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------+------------+-------+-------+------------+-----------------+
+; onda_ctrl[*]  ; clk        ; 3.861 ; 3.861 ; Rise       ; clk             ;
+;  onda_ctrl[0] ; clk        ; 3.861 ; 3.861 ; Rise       ; clk             ;
+;  onda_ctrl[1] ; clk        ; 3.828 ; 3.828 ; Rise       ; clk             ;
++---------------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------+
+; Hold Times                                                                  ;
++---------------+------------+--------+--------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++---------------+------------+--------+--------+------------+-----------------+
+; onda_ctrl[*]  ; clk        ; -2.601 ; -2.601 ; Rise       ; clk             ;
+;  onda_ctrl[0] ; clk        ; -2.623 ; -2.623 ; Rise       ; clk             ;
+;  onda_ctrl[1] ; clk        ; -2.601 ; -2.601 ; Rise       ; clk             ;
++---------------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------------+
+; Clock to Output Times                                                          ;
++--------------------+------------+-------+-------+------------+-----------------+
+; Data Port          ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------------+------------+-------+-------+------------+-----------------+
+; prueba_salida[*]   ; clk        ; 5.399 ; 5.399 ; Rise       ; clk             ;
+;  prueba_salida[0]  ; clk        ; 4.586 ; 4.586 ; Rise       ; clk             ;
+;  prueba_salida[1]  ; clk        ; 4.557 ; 4.557 ; Rise       ; clk             ;
+;  prueba_salida[2]  ; clk        ; 4.673 ; 4.673 ; Rise       ; clk             ;
+;  prueba_salida[3]  ; clk        ; 4.798 ; 4.798 ; Rise       ; clk             ;
+;  prueba_salida[4]  ; clk        ; 4.781 ; 4.781 ; Rise       ; clk             ;
+;  prueba_salida[5]  ; clk        ; 4.776 ; 4.776 ; Rise       ; clk             ;
+;  prueba_salida[6]  ; clk        ; 4.501 ; 4.501 ; Rise       ; clk             ;
+;  prueba_salida[7]  ; clk        ; 4.605 ; 4.605 ; Rise       ; clk             ;
+;  prueba_salida[8]  ; clk        ; 4.586 ; 4.586 ; Rise       ; clk             ;
+;  prueba_salida[9]  ; clk        ; 4.630 ; 4.630 ; Rise       ; clk             ;
+;  prueba_salida[10] ; clk        ; 5.399 ; 5.399 ; Rise       ; clk             ;
+; salida             ; clk        ; 3.798 ; 3.798 ; Rise       ; clk             ;
++--------------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                  ;
++--------------------+------------+-------+-------+------------+-----------------+
+; Data Port          ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------------+------------+-------+-------+------------+-----------------+
+; prueba_salida[*]   ; clk        ; 4.379 ; 4.379 ; Rise       ; clk             ;
+;  prueba_salida[0]  ; clk        ; 4.384 ; 4.384 ; Rise       ; clk             ;
+;  prueba_salida[1]  ; clk        ; 4.379 ; 4.379 ; Rise       ; clk             ;
+;  prueba_salida[2]  ; clk        ; 4.501 ; 4.501 ; Rise       ; clk             ;
+;  prueba_salida[3]  ; clk        ; 4.566 ; 4.566 ; Rise       ; clk             ;
+;  prueba_salida[4]  ; clk        ; 4.618 ; 4.618 ; Rise       ; clk             ;
+;  prueba_salida[5]  ; clk        ; 4.613 ; 4.613 ; Rise       ; clk             ;
+;  prueba_salida[6]  ; clk        ; 4.455 ; 4.455 ; Rise       ; clk             ;
+;  prueba_salida[7]  ; clk        ; 4.432 ; 4.432 ; Rise       ; clk             ;
+;  prueba_salida[8]  ; clk        ; 4.450 ; 4.450 ; Rise       ; clk             ;
+;  prueba_salida[9]  ; clk        ; 4.467 ; 4.467 ; Rise       ; clk             ;
+;  prueba_salida[10] ; clk        ; 4.947 ; 4.947 ; Rise       ; clk             ;
+; salida             ; clk        ; 3.798 ; 3.798 ; Rise       ; clk             ;
++--------------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------+
+; Propagation Delay                                                ;
++--------------+-------------------+-------+-------+-------+-------+
+; Input Port   ; Output Port       ; RR    ; RF    ; FR    ; FF    ;
++--------------+-------------------+-------+-------+-------+-------+
+; onda_ctrl[0] ; prueba_salida[0]  ; 6.666 ; 6.666 ; 6.666 ; 6.666 ;
+; onda_ctrl[0] ; prueba_salida[1]  ; 6.466 ; 6.466 ; 6.466 ; 6.466 ;
+; onda_ctrl[0] ; prueba_salida[2]  ; 6.629 ; 6.629 ; 6.629 ; 6.629 ;
+; onda_ctrl[0] ; prueba_salida[3]  ; 6.520 ; 6.520 ; 6.520 ; 6.520 ;
+; onda_ctrl[0] ; prueba_salida[4]  ; 6.718 ; 6.718 ; 6.718 ; 6.718 ;
+; onda_ctrl[0] ; prueba_salida[5]  ; 6.650 ; 6.650 ; 6.650 ; 6.650 ;
+; onda_ctrl[0] ; prueba_salida[6]  ; 6.396 ; 6.396 ; 6.396 ; 6.396 ;
+; onda_ctrl[0] ; prueba_salida[7]  ; 6.344 ; 6.344 ; 6.344 ; 6.344 ;
+; onda_ctrl[0] ; prueba_salida[8]  ; 6.367 ; 6.367 ; 6.367 ; 6.367 ;
+; onda_ctrl[0] ; prueba_salida[9]  ; 6.359 ; 6.359 ; 6.359 ; 6.359 ;
+; onda_ctrl[0] ; prueba_salida[10] ; 7.141 ; 7.141 ; 7.141 ; 7.141 ;
+; onda_ctrl[1] ; prueba_salida[0]  ; 6.461 ; 6.461 ; 6.461 ; 6.461 ;
+; onda_ctrl[1] ; prueba_salida[1]  ; 6.465 ; 6.465 ; 6.465 ; 6.465 ;
+; onda_ctrl[1] ; prueba_salida[2]  ; 6.626 ; 6.626 ; 6.626 ; 6.626 ;
+; onda_ctrl[1] ; prueba_salida[3]  ; 6.613 ; 6.613 ; 6.613 ; 6.613 ;
+; onda_ctrl[1] ; prueba_salida[4]  ; 6.612 ; 6.612 ; 6.612 ; 6.612 ;
+; onda_ctrl[1] ; prueba_salida[5]  ; 6.650 ; 6.650 ; 6.650 ; 6.650 ;
+; onda_ctrl[1] ; prueba_salida[6]  ; 6.522 ; 6.522 ; 6.522 ; 6.522 ;
+; onda_ctrl[1] ; prueba_salida[7]  ; 6.469 ; 6.469 ; 6.469 ; 6.469 ;
+; onda_ctrl[1] ; prueba_salida[8]  ; 6.492 ; 6.492 ; 6.492 ; 6.492 ;
+; onda_ctrl[1] ; prueba_salida[9]  ; 6.487 ; 6.487 ; 6.487 ; 6.487 ;
+; onda_ctrl[1] ; prueba_salida[10] ; 7.267 ; 7.267 ; 7.267 ; 7.267 ;
++--------------+-------------------+-------+-------+-------+-------+
+
+
++------------------------------------------------------------------+
+; Minimum Propagation Delay                                        ;
++--------------+-------------------+-------+-------+-------+-------+
+; Input Port   ; Output Port       ; RR    ; RF    ; FR    ; FF    ;
++--------------+-------------------+-------+-------+-------+-------+
+; onda_ctrl[0] ; prueba_salida[0]  ; 6.171 ; 6.171 ; 6.171 ; 6.171 ;
+; onda_ctrl[0] ; prueba_salida[1]  ; 6.283 ; 6.283 ; 6.283 ; 6.283 ;
+; onda_ctrl[0] ; prueba_salida[2]  ; 6.250 ; 6.250 ; 6.250 ; 6.250 ;
+; onda_ctrl[0] ; prueba_salida[3]  ; 6.405 ; 6.405 ; 6.405 ; 6.405 ;
+; onda_ctrl[0] ; prueba_salida[4]  ; 6.381 ; 6.381 ; 6.381 ; 6.381 ;
+; onda_ctrl[0] ; prueba_salida[5]  ; 6.434 ; 6.434 ; 6.434 ; 6.434 ;
+; onda_ctrl[0] ; prueba_salida[6]  ; 6.189 ; 6.189 ; 6.189 ; 6.189 ;
+; onda_ctrl[0] ; prueba_salida[7]  ; 6.179 ; 6.179 ; 6.179 ; 6.179 ;
+; onda_ctrl[0] ; prueba_salida[8]  ; 6.205 ; 6.205 ; 6.205 ; 6.205 ;
+; onda_ctrl[0] ; prueba_salida[9]  ; 6.193 ; 6.193 ; 6.193 ; 6.193 ;
+; onda_ctrl[0] ; prueba_salida[10] ; 6.511 ; 6.511 ; 6.511 ; 6.511 ;
+; onda_ctrl[1] ; prueba_salida[0]  ; 6.149 ; 6.149 ; 6.149 ; 6.149 ;
+; onda_ctrl[1] ; prueba_salida[1]  ; 6.285 ; 6.285 ; 6.285 ; 6.285 ;
+; onda_ctrl[1] ; prueba_salida[2]  ; 6.349 ; 6.349 ; 6.349 ; 6.349 ;
+; onda_ctrl[1] ; prueba_salida[3]  ; 6.406 ; 6.406 ; 6.406 ; 6.406 ;
+; onda_ctrl[1] ; prueba_salida[4]  ; 6.358 ; 6.358 ; 6.358 ; 6.358 ;
+; onda_ctrl[1] ; prueba_salida[5]  ; 6.434 ; 6.434 ; 6.434 ; 6.434 ;
+; onda_ctrl[1] ; prueba_salida[6]  ; 6.318 ; 6.318 ; 6.318 ; 6.318 ;
+; onda_ctrl[1] ; prueba_salida[7]  ; 6.308 ; 6.308 ; 6.308 ; 6.308 ;
+; onda_ctrl[1] ; prueba_salida[8]  ; 6.334 ; 6.334 ; 6.334 ; 6.334 ;
+; onda_ctrl[1] ; prueba_salida[9]  ; 6.322 ; 6.322 ; 6.322 ; 6.322 ;
+; onda_ctrl[1] ; prueba_salida[10] ; 6.489 ; 6.489 ; 6.489 ; 6.489 ;
++--------------+-------------------+-------+-------+-------+-------+
+
+
++--------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                            ;
++------------------+----------+-------+----------+---------+---------------------+
+; Clock            ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+----------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -4.934   ; 0.215 ; N/A      ; N/A     ; -2.277              ;
+;  clk             ; -4.934   ; 0.215 ; N/A      ; N/A     ; -2.277              ;
+; Design-wide TNS  ; -442.021 ; 0.0   ; 0.0      ; 0.0     ; -1037.953           ;
+;  clk             ; -442.021 ; 0.000 ; N/A      ; N/A     ; -1037.953           ;
++------------------+----------+-------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------------+
+; Setup Times                                                                 ;
++---------------+------------+--------+--------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++---------------+------------+--------+--------+------------+-----------------+
+; onda_ctrl[*]  ; clk        ; 10.089 ; 10.089 ; Rise       ; clk             ;
+;  onda_ctrl[0] ; clk        ; 9.864  ; 9.864  ; Rise       ; clk             ;
+;  onda_ctrl[1] ; clk        ; 10.089 ; 10.089 ; Rise       ; clk             ;
++---------------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------+
+; Hold Times                                                                  ;
++---------------+------------+--------+--------+------------+-----------------+
+; Data Port     ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++---------------+------------+--------+--------+------------+-----------------+
+; onda_ctrl[*]  ; clk        ; -2.601 ; -2.601 ; Rise       ; clk             ;
+;  onda_ctrl[0] ; clk        ; -2.623 ; -2.623 ; Rise       ; clk             ;
+;  onda_ctrl[1] ; clk        ; -2.601 ; -2.601 ; Rise       ; clk             ;
++---------------+------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------------------------------+
+; Clock to Output Times                                                            ;
++--------------------+------------+--------+--------+------------+-----------------+
+; Data Port          ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------------+------------+--------+--------+------------+-----------------+
+; prueba_salida[*]   ; clk        ; 13.521 ; 13.521 ; Rise       ; clk             ;
+;  prueba_salida[0]  ; clk        ; 11.020 ; 11.020 ; Rise       ; clk             ;
+;  prueba_salida[1]  ; clk        ; 10.797 ; 10.797 ; Rise       ; clk             ;
+;  prueba_salida[2]  ; clk        ; 11.212 ; 11.212 ; Rise       ; clk             ;
+;  prueba_salida[3]  ; clk        ; 11.585 ; 11.585 ; Rise       ; clk             ;
+;  prueba_salida[4]  ; clk        ; 11.731 ; 11.731 ; Rise       ; clk             ;
+;  prueba_salida[5]  ; clk        ; 11.406 ; 11.406 ; Rise       ; clk             ;
+;  prueba_salida[6]  ; clk        ; 10.622 ; 10.622 ; Rise       ; clk             ;
+;  prueba_salida[7]  ; clk        ; 10.863 ; 10.863 ; Rise       ; clk             ;
+;  prueba_salida[8]  ; clk        ; 10.898 ; 10.898 ; Rise       ; clk             ;
+;  prueba_salida[9]  ; clk        ; 10.959 ; 10.959 ; Rise       ; clk             ;
+;  prueba_salida[10] ; clk        ; 13.521 ; 13.521 ; Rise       ; clk             ;
+; salida             ; clk        ; 8.396  ; 8.396  ; Rise       ; clk             ;
++--------------------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                  ;
++--------------------+------------+-------+-------+------------+-----------------+
+; Data Port          ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------------+------------+-------+-------+------------+-----------------+
+; prueba_salida[*]   ; clk        ; 4.379 ; 4.379 ; Rise       ; clk             ;
+;  prueba_salida[0]  ; clk        ; 4.384 ; 4.384 ; Rise       ; clk             ;
+;  prueba_salida[1]  ; clk        ; 4.379 ; 4.379 ; Rise       ; clk             ;
+;  prueba_salida[2]  ; clk        ; 4.501 ; 4.501 ; Rise       ; clk             ;
+;  prueba_salida[3]  ; clk        ; 4.566 ; 4.566 ; Rise       ; clk             ;
+;  prueba_salida[4]  ; clk        ; 4.618 ; 4.618 ; Rise       ; clk             ;
+;  prueba_salida[5]  ; clk        ; 4.613 ; 4.613 ; Rise       ; clk             ;
+;  prueba_salida[6]  ; clk        ; 4.455 ; 4.455 ; Rise       ; clk             ;
+;  prueba_salida[7]  ; clk        ; 4.432 ; 4.432 ; Rise       ; clk             ;
+;  prueba_salida[8]  ; clk        ; 4.450 ; 4.450 ; Rise       ; clk             ;
+;  prueba_salida[9]  ; clk        ; 4.467 ; 4.467 ; Rise       ; clk             ;
+;  prueba_salida[10] ; clk        ; 4.947 ; 4.947 ; Rise       ; clk             ;
+; salida             ; clk        ; 3.798 ; 3.798 ; Rise       ; clk             ;
++--------------------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------------------+
+; Progagation Delay                                                    ;
++--------------+-------------------+--------+--------+--------+--------+
+; Input Port   ; Output Port       ; RR     ; RF     ; FR     ; FF     ;
++--------------+-------------------+--------+--------+--------+--------+
+; onda_ctrl[0] ; prueba_salida[0]  ; 15.468 ; 15.468 ; 15.468 ; 15.468 ;
+; onda_ctrl[0] ; prueba_salida[1]  ; 14.751 ; 14.751 ; 14.751 ; 14.751 ;
+; onda_ctrl[0] ; prueba_salida[2]  ; 15.270 ; 15.270 ; 15.270 ; 15.270 ;
+; onda_ctrl[0] ; prueba_salida[3]  ; 14.950 ; 14.950 ; 14.950 ; 14.950 ;
+; onda_ctrl[0] ; prueba_salida[4]  ; 15.677 ; 15.677 ; 15.677 ; 15.677 ;
+; onda_ctrl[0] ; prueba_salida[5]  ; 15.254 ; 15.254 ; 15.254 ; 15.254 ;
+; onda_ctrl[0] ; prueba_salida[6]  ; 14.501 ; 14.501 ; 14.501 ; 14.501 ;
+; onda_ctrl[0] ; prueba_salida[7]  ; 14.401 ; 14.401 ; 14.401 ; 14.401 ;
+; onda_ctrl[0] ; prueba_salida[8]  ; 14.441 ; 14.441 ; 14.441 ; 14.441 ;
+; onda_ctrl[0] ; prueba_salida[9]  ; 14.434 ; 14.434 ; 14.434 ; 14.434 ;
+; onda_ctrl[0] ; prueba_salida[10] ; 17.015 ; 17.015 ; 17.015 ; 17.015 ;
+; onda_ctrl[1] ; prueba_salida[0]  ; 14.814 ; 14.814 ; 14.814 ; 14.814 ;
+; onda_ctrl[1] ; prueba_salida[1]  ; 14.834 ; 14.834 ; 14.834 ; 14.834 ;
+; onda_ctrl[1] ; prueba_salida[2]  ; 15.278 ; 15.278 ; 15.278 ; 15.278 ;
+; onda_ctrl[1] ; prueba_salida[3]  ; 15.281 ; 15.281 ; 15.281 ; 15.281 ;
+; onda_ctrl[1] ; prueba_salida[4]  ; 15.431 ; 15.431 ; 15.431 ; 15.431 ;
+; onda_ctrl[1] ; prueba_salida[5]  ; 15.339 ; 15.339 ; 15.339 ; 15.339 ;
+; onda_ctrl[1] ; prueba_salida[6]  ; 14.961 ; 14.961 ; 14.961 ; 14.961 ;
+; onda_ctrl[1] ; prueba_salida[7]  ; 14.788 ; 14.788 ; 14.788 ; 14.788 ;
+; onda_ctrl[1] ; prueba_salida[8]  ; 14.827 ; 14.827 ; 14.827 ; 14.827 ;
+; onda_ctrl[1] ; prueba_salida[9]  ; 14.821 ; 14.821 ; 14.821 ; 14.821 ;
+; onda_ctrl[1] ; prueba_salida[10] ; 17.402 ; 17.402 ; 17.402 ; 17.402 ;
++--------------+-------------------+--------+--------+--------+--------+
+
+
++------------------------------------------------------------------+
+; Minimum Progagation Delay                                        ;
++--------------+-------------------+-------+-------+-------+-------+
+; Input Port   ; Output Port       ; RR    ; RF    ; FR    ; FF    ;
++--------------+-------------------+-------+-------+-------+-------+
+; onda_ctrl[0] ; prueba_salida[0]  ; 6.171 ; 6.171 ; 6.171 ; 6.171 ;
+; onda_ctrl[0] ; prueba_salida[1]  ; 6.283 ; 6.283 ; 6.283 ; 6.283 ;
+; onda_ctrl[0] ; prueba_salida[2]  ; 6.250 ; 6.250 ; 6.250 ; 6.250 ;
+; onda_ctrl[0] ; prueba_salida[3]  ; 6.405 ; 6.405 ; 6.405 ; 6.405 ;
+; onda_ctrl[0] ; prueba_salida[4]  ; 6.381 ; 6.381 ; 6.381 ; 6.381 ;
+; onda_ctrl[0] ; prueba_salida[5]  ; 6.434 ; 6.434 ; 6.434 ; 6.434 ;
+; onda_ctrl[0] ; prueba_salida[6]  ; 6.189 ; 6.189 ; 6.189 ; 6.189 ;
+; onda_ctrl[0] ; prueba_salida[7]  ; 6.179 ; 6.179 ; 6.179 ; 6.179 ;
+; onda_ctrl[0] ; prueba_salida[8]  ; 6.205 ; 6.205 ; 6.205 ; 6.205 ;
+; onda_ctrl[0] ; prueba_salida[9]  ; 6.193 ; 6.193 ; 6.193 ; 6.193 ;
+; onda_ctrl[0] ; prueba_salida[10] ; 6.511 ; 6.511 ; 6.511 ; 6.511 ;
+; onda_ctrl[1] ; prueba_salida[0]  ; 6.149 ; 6.149 ; 6.149 ; 6.149 ;
+; onda_ctrl[1] ; prueba_salida[1]  ; 6.285 ; 6.285 ; 6.285 ; 6.285 ;
+; onda_ctrl[1] ; prueba_salida[2]  ; 6.349 ; 6.349 ; 6.349 ; 6.349 ;
+; onda_ctrl[1] ; prueba_salida[3]  ; 6.406 ; 6.406 ; 6.406 ; 6.406 ;
+; onda_ctrl[1] ; prueba_salida[4]  ; 6.358 ; 6.358 ; 6.358 ; 6.358 ;
+; onda_ctrl[1] ; prueba_salida[5]  ; 6.434 ; 6.434 ; 6.434 ; 6.434 ;
+; onda_ctrl[1] ; prueba_salida[6]  ; 6.318 ; 6.318 ; 6.318 ; 6.318 ;
+; onda_ctrl[1] ; prueba_salida[7]  ; 6.308 ; 6.308 ; 6.308 ; 6.308 ;
+; onda_ctrl[1] ; prueba_salida[8]  ; 6.334 ; 6.334 ; 6.334 ; 6.334 ;
+; onda_ctrl[1] ; prueba_salida[9]  ; 6.322 ; 6.322 ; 6.322 ; 6.322 ;
+; onda_ctrl[1] ; prueba_salida[10] ; 6.489 ; 6.489 ; 6.489 ; 6.489 ;
++--------------+-------------------+-------+-------+-------+-------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 847      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 847      ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 3     ; 3    ;
+; Unconstrained Input Port Paths  ; 47    ; 47   ;
+; Unconstrained Output Ports      ; 12    ; 12   ;
+; Unconstrained Output Port Paths ; 56    ; 56   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Wed Nov 27 11:48:46 2024
+Info: Command: quartus_sta TF3 -c TF3
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'TF3.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -4.934
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -4.934      -442.021 clk 
+Info (332146): Worst-case hold slack is 0.499
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.499         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.277
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.277     -1037.953 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -0.979
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.979       -38.645 clk 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.423
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.423      -650.500 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4540 megabytes
+    Info: Processing ended: Wed Nov 27 11:48:49 2024
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:01
+
+

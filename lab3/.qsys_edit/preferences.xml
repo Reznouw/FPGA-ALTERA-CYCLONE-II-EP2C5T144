@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences>
+ <debug showDebugMenu="0" />
+ <systemtable>
+  <columns>
+   <connections preferredWidth="127" />
+   <irq preferredWidth="34" />
+  </columns>
+ </systemtable>
+ <clocktable>
+  <columns>
+   <clockname preferredWidth="399" />
+   <clocksource preferredWidth="399" />
+   <frequency preferredWidth="380" />
+  </columns>
+ </clocktable>
+ <library
+   expandedCategories="Library,Project,Library/Embedded Processors,Library/Verification,Library/Verification/Simulation" />
+ <window width="1492" height="800" x="29" y="96" />
+ <generation synthesis="VHDL" />
+</preferences>

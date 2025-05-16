@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\UPC\DISEÑO DIGITAL\EL61-1-DisDig-202402\ejem\simulation\qsim
+vejem
+Z1 !s100 <_@HA^Bg9CS=>LQ^3aXm:3
+Z2 IjNRfSEX<ZRkaZKLo7fUO;2
+Z3 V>=8a8<GBD5O;MSdEmH94>2
+Z4 dC:\UPC\DISEÑO DIGITAL\EL61-1-DisDig-202402\ejem\simulation\qsim
+Z5 w1725748483
+Z6 8ejem.vo
+Z7 Fejem.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|ejem.vo|
+Z10 o-work work -O0
+!i10b 1
+!s85 0
+Z11 !s108 1725748484.592000
+Z12 !s107 ejem.vo|
+!s101 -O0
+vejem_vlg_check_tst
+!i10b 1
+Z13 !s100 ak0Co@d:6@^VJ:4jE81WK2
+Z14 INMhL7X>hd31dX@=@?VDZR1
+Z15 VfK1B=j<9UP_?GJofmM2VC3
+R4
+R5
+Z16 8ejem.vt
+Z17 Fejem.vt
+L0 61
+R8
+r1
+!s85 0
+31
+Z18 !s108 1725748484.702000
+Z19 !s107 ejem.vt|
+Z20 !s90 -work|work|ejem.vt|
+!s101 -O0
+R10
+vejem_vlg_sample_tst
+!i10b 1
+Z21 !s100 mX0eTL09cS`Kz0Kn@Tf_X0
+Z22 Ia6emO[jZ]J71=jO]5hSoQ2
+Z23 V;7keLYef2ejAOgiMTGQW]3
+R4
+R5
+R16
+R17
+L0 29
+R8
+r1
+!s85 0
+31
+R18
+R19
+R20
+!s101 -O0
+R10
+vejem_vlg_vec_tst
+!i10b 1
+!s100 1V2iHE5JCiVG8T>]L`4C^2
+IP[Bc>kRh;h200Y5_BR`NX0
+Z24 VH[AWM^iC_9zX<T[nKPd^N3
+R4
+R5
+R16
+R17
+Z25 L0 227
+R8
+r1
+!s85 0
+31
+R18
+R19
+R20
+!s101 -O0
+R10

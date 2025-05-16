@@ -1,0 +1,16 @@
+Fitter Status : Successful - Wed Nov 13 08:59:29 2024
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
+Revision Name : uart
+Top-level Entity Name : uart
+Family : Cyclone II
+Device : EP2C5T144C8
+Timing Models : Final
+Total logic elements : 1,806 / 4,608 ( 39 % )
+    Total combinational functions : 1,690 / 4,608 ( 37 % )
+    Dedicated logic registers : 1,033 / 4,608 ( 22 % )
+Total registers : 1033
+Total pins : 9 / 89 ( 10 % )
+Total virtual pins : 0
+Total memory bits : 44,032 / 119,808 ( 37 % )
+Embedded Multiplier 9-bit elements : 0 / 26 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )

@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="pru1">
+		<CBX_INST_ENTRY INSTANCE_NAME="|pru1|pru1_cpu:cpu|pru1_cpu_nios2_oci:the_pru1_cpu_nios2_oci|pru1_cpu_nios2_ocimem:the_pru1_cpu_nios2_ocimem|pru1_cpu_ociram_sp_ram_module:pru1_cpu_ociram_sp_ram|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_r271.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|pru1|pru1_cpu:cpu|pru1_cpu_register_bank_a_module:pru1_cpu_register_bank_a|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_nlf1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|pru1|pru1_cpu:cpu|pru1_cpu_register_bank_b_module:pru1_cpu_register_bank_b|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_olf1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|pru1|pru1_jtag:jtag|pru1_jtag_scfifo_w:the_pru1_jtag_scfifo_w|scfifo:wfifo" CBX_FILE_NAME="scfifo_1n21.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|pru1|pru1_jtag:jtag|pru1_jtag_scfifo_r:the_pru1_jtag_scfifo_r|scfifo:rfifo" CBX_FILE_NAME="scfifo_1n21.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|pru1|pru1_memoria:memoria|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_6ob1.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

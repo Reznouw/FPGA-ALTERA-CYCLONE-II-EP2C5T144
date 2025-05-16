@@ -1,0 +1,30 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+
+entity labsemana3 is
+	port
+	(
+	data_in: in std_logic_vector (3 downto 0);	
+	cont_despl: in std_logic_vector (1 downto 0);
+	data_out: out std_logic_vector(3 downto 0)
+	);
+end labsemana3;
+
+architecture fn of labsemana3 is
+	signal a,b,c,d: std_logic_vector(3 downto 0);
+begin
+
+	a <= data_in;
+	b <= "0"&data_in(3 downto 1);
+	c <= "00"&data_in(3 downto 2);
+	d <= "000"&data_in(3);
+	
+	with cont_despl select
+		data_out <= a When "00",
+						b When "01",
+						c When "10",
+						d When others;
+	
+end fn;

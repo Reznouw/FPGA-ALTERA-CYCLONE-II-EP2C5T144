@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\UPC\DISEÑO DIGITAL\EL61-1-DisDig-202402\labcalificado1\simulation\qsim
+vlabcalificado1
+Z1 II[AWCQ]eX2aN_d@onnmbB1
+Z2 V[?6=5KIN[5W4lgC[fSU=K1
+Z3 dC:\UPC\DISEÑO DIGITAL\EL61-1-DisDig-202402\labcalificado1\simulation\qsim
+Z4 w1725463027
+Z5 8labcalificado1.vo
+Z6 Flabcalificado1.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 o-work work -O0
+!i10b 1
+Z9 !s100 :Q>^Qf>SMA8E0L2OlNZ6E3
+!s85 0
+Z10 !s108 1725463029.557000
+Z11 !s107 labcalificado1.vo|
+Z12 !s90 -work|work|labcalificado1.vo|
+!s101 -O0
+vlabcalificado1_vlg_check_tst
+!i10b 1
+!s100 o;amV6E^d3U1G2f7G[`;22
+IAckkd<[iTU[biGM18fI1[1
+V36J`5`7Y9hIlSRa<=DLUT2
+R3
+Z13 w1725463026
+Z14 8labcalificado1.vt
+Z15 Flabcalificado1.vt
+L0 61
+R7
+r1
+!s85 0
+31
+Z16 !s108 1725463029.656000
+Z17 !s107 labcalificado1.vt|
+Z18 !s90 -work|work|labcalificado1.vt|
+!s101 -O0
+R8
+vlabcalificado1_vlg_sample_tst
+!i10b 1
+!s100 IOML5Q;6JS[dGAj5S=Jdi0
+IFzdjgTgIgJJGML>9md?dn3
+V5mfDYOLXfnFi7SJ@WI3B?1
+R3
+R13
+R14
+R15
+L0 29
+R7
+r1
+!s85 0
+31
+R16
+R17
+R18
+!s101 -O0
+R8
+vlabcalificado1_vlg_vec_tst
+!i10b 1
+!s100 VPTEdzjO@PEPD7VMaV=430
+IO>>=DX>Q>^j=8P]DE9Z>o1
+VBCeC@Z8EWM9Nb<f=0^b<30
+R3
+R13
+R14
+R15
+L0 227
+R7
+r1
+!s85 0
+31
+R16
+R17
+R18
+!s101 -O0
+R8

@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="TF3">
+		<CBX_INST_ENTRY INSTANCE_NAME="|TF3|sierra_wave:u4|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_k981.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|TF3|sine_wave:u3|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_t281.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|TF3|triangulo_wave:u5|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_4g81.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

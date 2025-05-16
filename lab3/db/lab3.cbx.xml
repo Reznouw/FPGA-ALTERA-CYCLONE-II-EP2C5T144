@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="lab3">
+		<CBX_INST_ENTRY INSTANCE_NAME="|lab3|lab3_cpu:cpu|lab3_cpu_nios2_oci:the_lab3_cpu_nios2_oci|lab3_cpu_nios2_ocimem:the_lab3_cpu_nios2_ocimem|lab3_cpu_ociram_sp_ram_module:lab3_cpu_ociram_sp_ram|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_l171.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|lab3|lab3_cpu:cpu|lab3_cpu_register_bank_a_module:lab3_cpu_register_bank_a|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_hkf1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|lab3|lab3_cpu:cpu|lab3_cpu_register_bank_b_module:lab3_cpu_register_bank_b|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_ikf1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|lab3|lab3_jtag_uart_0:jtag_uart_0|lab3_jtag_uart_0_scfifo_w:the_lab3_jtag_uart_0_scfifo_w|scfifo:wfifo" CBX_FILE_NAME="scfifo_1n21.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|lab3|lab3_jtag_uart_0:jtag_uart_0|lab3_jtag_uart_0_scfifo_r:the_lab3_jtag_uart_0_scfifo_r|scfifo:rfifo" CBX_FILE_NAME="scfifo_1n21.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|lab3|lab3_onchip_memory2_0:onchip_memory2_0|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_ghc1.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

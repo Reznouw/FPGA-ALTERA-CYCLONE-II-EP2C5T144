@@ -1,0 +1,8 @@
+	component pru1 is
+		port (
+			clk_clk                         : in  std_logic                    := 'X'; -- clk
+			reset_reset_n                   : in  std_logic                    := 'X'; -- reset_n
+			leds_external_connection_export : out std_logic_vector(2 downto 0)         -- export
+		);
+	end component pru1;
+
